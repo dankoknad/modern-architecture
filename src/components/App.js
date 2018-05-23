@@ -5,6 +5,10 @@ import GoogleMap from './GoogleMap'
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      data: data
+    }
     this.mapEl = React.createRef();
   }
 
@@ -23,7 +27,7 @@ class App extends Component {
       <div className="">
         <h1>Modern Architecture</h1>
         <div id="map" ref={this.mapEl}></div>
-        <GoogleMap />
+        <GoogleMap data={this.state.data} />
         <pre>{JSON.stringify(data, null, 2)}</pre>   
       </div>
     );
