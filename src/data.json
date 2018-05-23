@@ -2,31 +2,38 @@
   "data": [
     {
       "id": 0,
-      "name": "first",
+      "name": "First house",
       "img": "http://via.placeholder.com/350x150?text=01",
       "lat": -34.397,
       "lng": 150.644
     },
     {
       "id": 2,
-      "name": "second",
+      "name": "Second house",
       "img": "http://via.placeholder.com/350x150?text=02",
       "lat": -35.397,
       "lng": 151.644
     },
     {
       "id": 3,
-      "name": "third",
+      "name": "Third house",
       "img": "http://via.placeholder.com/350x150?text=03",
       "lat": -33.397,
       "lng": 151
     },
     {
       "id": 4,
-      "name": "fourth",
+      "name": "Fourth house",
       "img": "http://via.placeholder.com/350x150?text=04",
       "lat": -34,
       "lng": 151.7
+    },
+    {
+      "id": 5,
+      "name": "Fifth house",
+      "img": "http://via.placeholder.com/350x150?text=05",
+      "lat": -35,
+      "lng": 149.6
     }
   ]
 }
