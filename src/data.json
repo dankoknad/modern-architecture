@@ -1,23 +1,25 @@
-[
-  {
-    "id": 0,
-    "name": "first",
-    "img": "http://via.placeholder.com/350x150?text=01",
-    "lat": -34.397, 
-    "lng": 150.644
-  },
-  {
-    "id": 2,
-    "name": "second",
-    "img": "http://via.placeholder.com/350x150?text=02",
-    "lat": -35.397, 
-    "lng": 151.644
-  },
-  {
-    "id": 3,
-    "name": "third",
-    "img": "http://via.placeholder.com/350x150?text=03",
-    "lat": -33.397, 
-    "lng": 151
-  }
-]
+{
+  "data": [
+    {
+      "id": 0,
+      "name": "first",
+      "img": "http://via.placeholder.com/350x150?text=01",
+      "lat": -34.397,
+      "lng": 150.644
+    },
+    {
+      "id": 2,
+      "name": "second",
+      "img": "http://via.placeholder.com/350x150?text=02",
+      "lat": -35.397,
+      "lng": 151.644
+    },
+    {
+      "id": 3,
+      "name": "third",
+      "img": "http://via.placeholder.com/350x150?text=03",
+      "lat": -33.397,
+      "lng": 151
+    }
+  ]
+}
