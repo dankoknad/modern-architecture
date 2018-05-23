@@ -9,7 +9,6 @@ class App extends Component {
     this.state = {
       data: data
     }
-    this.mapEl = React.createRef();
   }
 
   componentDidMount() {
@@ -26,7 +25,6 @@ class App extends Component {
     return (
       <div className="">
         <h1>Modern Architecture</h1>
-        <div id="map" ref={this.mapEl}></div>
         <GoogleMap data={this.state.data} />
         <pre>{JSON.stringify(data, null, 2)}</pre>   
       </div>
