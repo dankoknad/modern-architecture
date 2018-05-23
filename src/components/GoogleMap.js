@@ -14,21 +14,25 @@ export default class GoogleMap extends Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapEl, {
       center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+      zoom: 6
     });
 
-    console.log('m', this.mapEl)
+    this.createMarkers(this.props.data)
+  }
+
+  createMarkers = (d) => {
+    d.map(house => {
+      this.marker = new google.maps.Marker({
+        position: {lat: house.lat, lng: house.lng},
+        map: this.map
+      });
+    })
   }
 
   render() {
     return (
       <div>
         <div className="map" ref={el => this.mapEl = el}></div>
-        <hr />  
-        i'm GoogleMap component
-        <pre>{JSON.stringify(this.props.data, null, 2)}</pre>
-        i'm GoogleMap component
-        <hr />  
       </div>
     )
   }

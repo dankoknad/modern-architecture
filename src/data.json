@@ -20,6 +20,13 @@
       "img": "http://via.placeholder.com/350x150?text=03",
       "lat": -33.397,
       "lng": 151
+    },
+    {
+      "id": 4,
+      "name": "fourth",
+      "img": "http://via.placeholder.com/350x150?text=04",
+      "lat": -34,
+      "lng": 151.7
     }
   ]
 }
