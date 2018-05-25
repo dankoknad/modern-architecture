@@ -62,11 +62,11 @@ export default class GoogleMap extends Component {
     return (
       <div>
         <div className="map" ref={el => this.mapEl = el}></div>
-        <h2 className="text-center">
+        <div className="text-center is-size-4">
           {selectedMarker 
             ? `${selectedMarker.title} selected with id: ${selectedMarker.id}` 
             : 'pls click at some of the markers'}
-        </h2>
+        </div>
       </div>
     )
   }

@@ -23,10 +23,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="">
-        <h1>Modern Architecture</h1>
-        <GoogleMap data={this.state.data} />
+      <div class="container">
+        <h1 className="is-size-1">Modern Architecture</h1>
+        <div class="columns">
+          <div class="column">
+            First column
+          </div>
+          <div class="column">
+            <GoogleMap data={this.state.data} />
+          </div>
+        </div>
+          
         <pre>{JSON.stringify(data, null, 2)}</pre>   
+        
       </div>
     );
   }
