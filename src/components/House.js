@@ -1,9 +1,10 @@
 import React from 'react'
 
-function House() {
+function House({name, img, selectHouse}) {
   return (
-    <div>
-      House
+    <div onClick={selectHouse} className="column is-half">
+      <div>{name}</div>
+      <img src={img} />
     </div>
   )
 }

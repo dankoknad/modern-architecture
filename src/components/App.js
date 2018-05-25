@@ -8,18 +8,18 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: data.data
+      data: data.data,
+      activeHouse: null 
     }
   }
 
   componentDidMount() {
-    // console.log(this.mapEl)
-    // this.mapEl.current.innerHTML = "hello world"
 
-    // this.initMap()
+  }
 
-
-
+  selectHouse = (house) => {
+    this.setState({activeHouse: house})
+    console.log(house)
   }
 
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
         <h1 className="is-size-1">Modern Architecture</h1>
         <div className="columns">
           <div className="column">
-            <Houses houses={data}/>
+            <Houses selectHouse={this.selectHouse} houses={data}/>
           </div>
           <div className="column">
             <GoogleMap houses={data} />

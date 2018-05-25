@@ -1,12 +1,13 @@
 import React from 'react'
 import House from './House'
 
-function Houses({ houses }) {
+function Houses({ houses, selectHouse }) {
   let housesEl = houses.map(house => (
-    <div key={house.id}  className="column is-half ">
-      <div>{house.name}</div>
-      <img src={house.img} />
-    </div>
+    <House 
+      key={house.id} 
+      {...house}
+      selectHouse={() => selectHouse(house)}
+    />
   ))
   return (
     <div className="columns is-multiline">
