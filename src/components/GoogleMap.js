@@ -7,7 +7,8 @@ export default class GoogleMap extends Component {
     super(props)
 
     this.state = {
-      markers: []
+      markers: [],
+      selectedMarker: null
     }
 
   }
@@ -19,6 +20,7 @@ export default class GoogleMap extends Component {
     });
 
     this.createMarkers(this.props.data)
+    
   }
 
   createMarkers = (d) => {
@@ -28,21 +30,33 @@ export default class GoogleMap extends Component {
       origin: new google.maps.Point(0, 0), // origin
       anchor: new google.maps.Point(25, 50) // anchor
     };
-
+    var _self = this
     d.map(house => {
       this.marker = new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
-        title: house.name
+        title: house.name,
+        houseId: house.id
       });
+
+      _self.marker.addListener('click', function(e) {
+        _self.setState({selectedMarker: { title: this.title, id: this.houseId }})
+      })
     })
   }
 
   render() {
+    const { selectedMarker } = this.state
+
     return (
       <div>
         <div className="map" ref={el => this.mapEl = el}></div>
+        <h2 className="text-center">
+          {selectedMarker 
+            ? `${selectedMarker.title} selected with id: ${selectedMarker.id}` 
+            : 'pls click at some of the markers'}
+        </h2>
       </div>
     )
   }
