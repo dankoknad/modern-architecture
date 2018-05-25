@@ -15,3 +15,11 @@ h1 {
 .text-center {
   text-align: center;
 }
+
+.house {
+  cursor: pointer;
+}
+
+.house:hover {
+  background-color: #f8f8f8;
+}

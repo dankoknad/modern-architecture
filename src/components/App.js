@@ -19,11 +19,10 @@ class App extends Component {
 
   selectHouse = (house) => {
     this.setState({activeHouse: house})
-    console.log(house)
   }
 
   render() {
-    const { data } = this.state
+    const { data, activeHouse } = this.state
 
     return (
       <div className="container">
@@ -31,6 +30,12 @@ class App extends Component {
         <div className="columns">
           <div className="column">
             <Houses selectHouse={this.selectHouse} houses={data}/>
+            <div className="text-center is-size-4">
+              {activeHouse 
+                ? `${activeHouse.name} selected with id: ${activeHouse.id}`
+                : 'pls click at some of the houses'
+              }
+            </div>
           </div>
           <div className="column">
             <GoogleMap houses={data} />

@@ -2,9 +2,9 @@ import React from 'react'
 
 function House({name, img, selectHouse}) {
   return (
-    <div onClick={selectHouse} className="column is-half">
+    <div onClick={selectHouse} className="column is-half house">
       <div>{name}</div>
-      <img src={img} />
+      <img src={img} alt={name}/>
     </div>
   )
 }
