@@ -43,6 +43,10 @@ export default class GoogleMap extends Component {
       });
 
       _self.marker.addListener('click', function(e) {
+        this.map.panTo({
+          lat: this.getPosition().lat(), 
+          lng: this.getPosition().lng()
+        });
         _self.setState({selectedMarker: { title: this.title, id: this.houseId }})
       })
     })
