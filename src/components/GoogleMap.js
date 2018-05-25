@@ -19,7 +19,7 @@ export default class GoogleMap extends Component {
       zoom: 5.3
     });
 
-    this.createMarkers(this.props.data)
+    this.createMarkers(this.props.houses)
     
   }
 

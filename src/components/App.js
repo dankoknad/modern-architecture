@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from '../data.json'
 import GoogleMap from './GoogleMap'
+import Houses from './Houses'
 
 class App extends Component {
   constructor(props) {
@@ -22,15 +23,17 @@ class App extends Component {
   }
 
   render() {
+    const { data } = this.state
+
     return (
-      <div class="container">
+      <div className="container">
         <h1 className="is-size-1">Modern Architecture</h1>
-        <div class="columns">
-          <div class="column">
-            First column
+        <div className="columns">
+          <div className="column">
+            <Houses houses={data}/>
           </div>
-          <div class="column">
-            <GoogleMap data={this.state.data} />
+          <div className="column">
+            <GoogleMap houses={data} />
           </div>
         </div>
           
