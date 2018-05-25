@@ -14,13 +14,21 @@ export default class GoogleMap extends Component {
   }
 
   componentDidMount() {
+    const {lat, lng} = this.props.houses[0]
+
     this.map = new google.maps.Map(this.mapEl, {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 5.3
+      center: { lat, lng },
+      zoom: 7
     });
 
     this.createMarkers(this.props.houses)
-    
+  }
+
+  componentDidUpdate() {
+    this.props.activeHouse && this.map.panTo({
+      lat: this.props.activeHouse.lat, 
+      lng: this.props.activeHouse.lng
+    });
   }
 
   createMarkers = (d) => {
@@ -59,6 +67,7 @@ export default class GoogleMap extends Component {
 
   render() {
     const { selectedMarker } = this.state
+    const { activeHouse } = this.props
 
     return (
       <div>
@@ -67,6 +76,9 @@ export default class GoogleMap extends Component {
           {selectedMarker 
             ? `${selectedMarker.title} selected with id: ${selectedMarker.id}` 
             : 'pls click at some of the markers'}
+        </div>
+        <div className="text-center is-size-4">
+          {activeHouse && `active is ${activeHouse.name}`}
         </div>
       </div>
     )
