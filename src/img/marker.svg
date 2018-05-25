@@ -1,5 +1,14 @@
-<svg fill="rgb(90,200,250)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-<path d="M256,0C149.969,0,64,85.969,64,192s160,320,192,320s192-213.969,192-320S362.031,0,256,0z M256,320
-	c-70.594,0-128-57.438-128-128S185.406,64,256,64s128,57.438,128,128S326.594,320,256,320z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="384px" height="512px" viewBox="0 0 384 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="marker">
+            <path d="M192,0 C85.969,0 0,85.969 0,192 C0,298.031 160,512 192,512 C224,512 384,298.031 384,192 C384,85.969 298.031,0 192,0 Z" id="Shape" fill="#5AC8FA" fill-rule="nonzero"></path>
+            <path d="M192,335 C121.406,335 64,274.196492 64,199.5 C64,124.803508 121.406,64 192,64 C262.594,64 320,124.803508 320,199.5 C320,274.196492 262.594,335 192,335 Z" id="Path" fill="#417505"></path>
+            <path d="M192,320 C121.406,320 64,262.562 64,192 C64,121.438 121.406,64 192,64 C262.594,64 320,121.438 320,192 C320,262.562 262.594,320 192,320 Z" id="Path" fill="#FFFFFF"></path>
+        </g>
+    </g>
 </svg>
