@@ -1,11 +1,12 @@
 import React from 'react'
 import House from './House'
 
-function Houses({ houses, selectHouse }) {
+function Houses({ houses, activeHouse, selectHouse }) {
   let housesEl = houses.map(house => (
     <House 
       key={house.id} 
-      {...house}
+      house={house}
+      activeHouse={activeHouse}
       selectHouse={() => selectHouse(house)}
     />
   ))

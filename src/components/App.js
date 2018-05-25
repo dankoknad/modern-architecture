@@ -29,7 +29,11 @@ class App extends Component {
         <h1 className="is-size-1">Modern Architecture</h1>
         <div className="columns">
           <div className="column">
-            <Houses selectHouse={this.selectHouse} houses={data}/>
+            <Houses
+              houses={data}
+              activeHouse={activeHouse}
+              selectHouse={this.selectHouse} 
+            />
             <div className="text-center is-size-4">
               {activeHouse 
                 ? `${activeHouse.name} selected with id: ${activeHouse.id}`

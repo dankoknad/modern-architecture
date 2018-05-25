@@ -1,10 +1,11 @@
 import React from 'react'
 
-function House({name, img, selectHouse}) {
+function House({house, activeHouse, selectHouse}) {
+  const isActive = activeHouse && activeHouse.id === house.id ? "active" : ""
   return (
-    <div onClick={selectHouse} className="column is-half house">
-      <div>{name}</div>
-      <img src={img} alt={name}/>
+    <div onClick={selectHouse} className={`column is-half house ${isActive}`}>
+      <div>{house.name}</div>
+      <img src={house.img} alt={house.name}/>
     </div>
   )
 }
