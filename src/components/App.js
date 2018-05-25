@@ -42,7 +42,11 @@ class App extends Component {
             </div>
           </div>
           <div className="column">
-            <GoogleMap houses={data} />
+            <GoogleMap
+              houses={data}
+              activeHouse={activeHouse}
+              selectHouse={this.selectHouse} 
+            />
           </div>
         </div>
           

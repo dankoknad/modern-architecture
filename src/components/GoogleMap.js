@@ -46,6 +46,7 @@ export default class GoogleMap extends Component {
       });
 
       _self.marker.addListener('click', function(e) {
+        _self.props.selectHouse(house)
         this.setZIndex(maxZIndex++);
         this.map.panTo({
           lat: this.getPosition().lat(), 
