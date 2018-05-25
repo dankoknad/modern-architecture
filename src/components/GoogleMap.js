@@ -28,7 +28,8 @@ export default class GoogleMap extends Component {
       url: markerIcon, // url
       scaledSize: new google.maps.Size(50, 50), // scaled size
       origin: new google.maps.Point(0, 0), // origin
-      anchor: new google.maps.Point(25, 50) // anchor
+      anchor: new google.maps.Point(25, 50), // anchor
+      labelOrigin: new google.maps.Point(25, 19) // label position
     };
     var _self = this
     d.map(house => {
@@ -36,6 +37,7 @@ export default class GoogleMap extends Component {
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
+        label: String(house.id + 1),
         title: house.name,
         houseId: house.id
       });

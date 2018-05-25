@@ -8,28 +8,28 @@
       "lng": 150.644
     },
     {
-      "id": 2,
+      "id": 1,
       "name": "Second house",
       "img": "http://via.placeholder.com/350x150?text=02",
       "lat": -35.397,
       "lng": 151.644
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Third house",
       "img": "http://via.placeholder.com/350x150?text=03",
       "lat": -33.397,
       "lng": 151
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Fourth house",
       "img": "http://via.placeholder.com/350x150?text=04",
       "lat": -34,
       "lng": 151.7
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Fifth house",
       "img": "http://via.placeholder.com/350x150?text=05",
       "lat": -35,
