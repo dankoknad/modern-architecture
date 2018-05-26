@@ -11,8 +11,7 @@ export default class GoogleMap extends Component {
       counter: 2
     }
 
-    const markers = [];
-    let counter = 1
+    const markers = []; // temp placeholder for markers
   }
 
   componentDidMount() {
@@ -42,7 +41,7 @@ export default class GoogleMap extends Component {
     )  
   }
 
-  createMarkers = (d) => {
+  createMarkers = (houses) => {
     const icon = {
       url: markerIcon, // url
       scaledSize: new google.maps.Size(38, 50), // scaled size
@@ -52,21 +51,20 @@ export default class GoogleMap extends Component {
     };
     const _self = this;
 
-    this.markers = d.map(house => {
+    this.markers = houses.map(house => {
       return new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
         zIndex: _self.props.activeHouse.id === house.id ? 2 : 1,
-        a: _self.props.activeHouse.id,
         label: String(house.id + 1),
         title: house.name,
-        houseId: house.id
+        id: house.id
       });
     })
 
     this.markers.map((marker, i) => marker.addListener('click', function(e) {
-      _self.props.selectHouse(d[i])
+      _self.props.selectHouse(houses[i])
     }))
 
     this.setState({markers: this.markers})

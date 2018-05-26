@@ -13,10 +13,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-
-  }
-
   selectHouse = (house) => {
     this.setState({activeHouse: house})
   }
