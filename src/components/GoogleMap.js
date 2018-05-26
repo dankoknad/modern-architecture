@@ -52,12 +52,12 @@ export default class GoogleMap extends Component {
     };
     const _self = this;
 
-    this.markers = d.map((house, index) => {
+    this.markers = d.map(house => {
       return new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
-        zIndex: _self.props.activeHouse.id === index ? 2 : 1,
+        zIndex: _self.props.activeHouse.id === house.id ? 2 : 1,
         a: _self.props.activeHouse.id,
         label: String(house.id + 1),
         title: house.name,
