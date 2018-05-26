@@ -1,17 +1,18 @@
 /*global google*/
 import React, { Component } from 'react'
 import markerIcon from '../img/marker.svg'
+import PropTypes from 'prop-types';
 
 export default class GoogleMap extends Component {
-  constructor(props) {
-    super(props)
+  static propTypes = {
+    houses: PropTypes.array.isRequired,
+    activeHouse: PropTypes.object.isRequired,
+    selectHouse: PropTypes.func.isRequired
+  } 
 
-    this.state = {
-      markers: [],
-      counter: 2
-    }
-
-    const markers = []; // temp placeholder for markers
+  state = {
+    markers: [],
+    counter: 2
   }
 
   componentDidMount() {
@@ -49,6 +50,7 @@ export default class GoogleMap extends Component {
       anchor: new google.maps.Point(19, 50), // anchor
       labelOrigin: new google.maps.Point(19, 19) // label position
     };
+    
     const _self = this;
 
     this.markers = houses.map(house => {
@@ -71,7 +73,6 @@ export default class GoogleMap extends Component {
   }
 
   render() {
-    const { } = this.state
     const { activeHouse } = this.props
 
     return (
