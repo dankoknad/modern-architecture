@@ -9,7 +9,7 @@ class App extends Component {
 
     this.state = {
       data: data.data,
-      activeHouse: null 
+      activeHouse: data.data[0] 
     }
   }
 

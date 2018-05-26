@@ -20,9 +20,12 @@ h1 {
   cursor: pointer;
 }
 .active {
+  color: #fff;
   background-color: #59c8fa;
 }
 
 .house:hover {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
+  color: #fff;
+  background-color: #59c8fa;
 }

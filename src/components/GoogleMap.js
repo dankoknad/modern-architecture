@@ -18,10 +18,11 @@ export default class GoogleMap extends Component {
 
     this.map = new google.maps.Map(this.mapEl, {
       center: { lat, lng },
-      zoom: 7
+      zoom: 5
     });
 
-    this.createMarkers(this.props.houses)
+    this.createMarkers(this.props.houses, this.props.activeHouse)
+
   }
 
   componentDidUpdate() {
@@ -29,6 +30,10 @@ export default class GoogleMap extends Component {
       lat: this.props.activeHouse.lat, 
       lng: this.props.activeHouse.lng
     });
+    // this.createMarkers(this.props.houses, this.props.activeHouse)
+
+    this.state.markers.map(marker => marker.setMap(this.map));
+    // marker.setMap(this.map)
   }
 
   createMarkers = (d) => {
@@ -40,29 +45,39 @@ export default class GoogleMap extends Component {
       labelOrigin: new google.maps.Point(19, 19) // label position
     };
     const _self = this;
-    let maxZIndex = 1;
+    var maxZIndex = 1;
 
-    d.map(house => {
-      this.marker = new google.maps.Marker({
+    const markers = d.map(house => {
+      if(house.id === this.props.activeHouse.id) {
+
+      }
+      // maxZIndex = () ? maxZIndex + 1 : maxZIndex
+
+      return new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
-        map: this.map,
+        // map: this.map,
         icon: icon,
         zIndex: maxZIndex,
         label: String(house.id + 1),
         title: house.name,
         houseId: house.id
       });
-
-      _self.marker.addListener('click', function(e) {
-        _self.props.selectHouse(house)
-        this.setZIndex(maxZIndex++);
-        this.map.panTo({
-          lat: this.getPosition().lat(), 
-          lng: this.getPosition().lng()
-        });
-        _self.setState({selectedMarker: { title: this.title, id: this.houseId }})
-      })
     })
+
+    markers.map((marker, i) => marker.addListener('click', function(e) {
+      _self.props.selectHouse(d[i])
+      this.setZIndex(maxZIndex++);
+      this.map.panTo({
+        lat: this.getPosition().lat(), 
+        lng: this.getPosition().lng()
+      });
+      // _self.setState({selectedMarker: { title: this.title, id: this.houseId }})
+    }))
+
+    // console.log(markers)
+
+    this.setState({markers: markers}, () => console.log('m', this.state.markers))
+    // setTimeout(() =>{ _self.setState({markers: markers.concat(markers.concat(markers))})} , 10000)
   }
 
   render() {
@@ -72,11 +87,6 @@ export default class GoogleMap extends Component {
     return (
       <div>
         <div className="map" ref={el => this.mapEl = el}></div>
-        <div className="text-center is-size-4">
-          {selectedMarker 
-            ? `${selectedMarker.title} selected with id: ${selectedMarker.id}` 
-            : 'pls click at some of the markers'}
-        </div>
         <div className="text-center is-size-4">
           {activeHouse && `active is ${activeHouse.name}`}
         </div>
