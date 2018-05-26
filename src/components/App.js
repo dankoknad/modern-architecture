@@ -4,13 +4,9 @@ import GoogleMap from './GoogleMap'
 import Houses from './Houses'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: data.data,
-      activeHouse: data.data[0] 
-    }
+  state = {
+    data: data.data,
+    activeHouse: data.data[0] 
   }
 
   selectHouse = (house) => {
