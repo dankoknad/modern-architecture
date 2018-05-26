@@ -8,9 +8,11 @@ export default class GoogleMap extends Component {
 
     this.state = {
       markers: [],
-      selectedMarker: null
+      counter: 2
     }
 
+    const markers = [];
+    let counter = 1
   }
 
   componentDidMount() {
@@ -30,10 +32,14 @@ export default class GoogleMap extends Component {
       lat: this.props.activeHouse.lat, 
       lng: this.props.activeHouse.lng
     });
-    // this.createMarkers(this.props.houses, this.props.activeHouse)
-
-    this.state.markers.map(marker => marker.setMap(this.map));
-    // marker.setMap(this.map)
+  }
+  
+  UNSAFE_componentWillReceiveProps() {
+    this.setState({counter: this.state.counter + 1}, () => (
+      this.markers.length && 
+      this.markers[this.props.activeHouse.id]
+        .setZIndex(this.state.counter))
+    )  
   }
 
   createMarkers = (d) => {
@@ -45,43 +51,29 @@ export default class GoogleMap extends Component {
       labelOrigin: new google.maps.Point(19, 19) // label position
     };
     const _self = this;
-    var maxZIndex = 1;
 
-    const markers = d.map(house => {
-      if(house.id === this.props.activeHouse.id) {
-
-      }
-      // maxZIndex = () ? maxZIndex + 1 : maxZIndex
-
+    this.markers = d.map((house, index) => {
       return new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
-        // map: this.map,
+        map: this.map,
         icon: icon,
-        zIndex: maxZIndex,
+        zIndex: _self.props.activeHouse.id === index ? 2 : 1,
+        a: _self.props.activeHouse.id,
         label: String(house.id + 1),
         title: house.name,
         houseId: house.id
       });
     })
 
-    markers.map((marker, i) => marker.addListener('click', function(e) {
+    this.markers.map((marker, i) => marker.addListener('click', function(e) {
       _self.props.selectHouse(d[i])
-      this.setZIndex(maxZIndex++);
-      this.map.panTo({
-        lat: this.getPosition().lat(), 
-        lng: this.getPosition().lng()
-      });
-      // _self.setState({selectedMarker: { title: this.title, id: this.houseId }})
     }))
 
-    // console.log(markers)
-
-    this.setState({markers: markers}, () => console.log('m', this.state.markers))
-    // setTimeout(() =>{ _self.setState({markers: markers.concat(markers.concat(markers))})} , 10000)
+    this.setState({markers: this.markers})
   }
 
   render() {
-    const { selectedMarker } = this.state
+    const { } = this.state
     const { activeHouse } = this.props
 
     return (
