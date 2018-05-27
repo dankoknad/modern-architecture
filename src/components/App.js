@@ -3,6 +3,7 @@ import data from '../data.json'
 import GoogleMap from './GoogleMap'
 import Houses from './Houses'
 import Modal from 'react-responsive-modal';
+import ModalContent from './ModalContent'
 
 class App extends Component {
   state = {
@@ -30,7 +31,7 @@ class App extends Component {
   }
 
   render() {
-    const { data, activeHouse } = this.state
+    const { data, activeHouse, houseForModal, isModalOppened } = this.state
 
     return (
       <div className="container">
@@ -59,12 +60,18 @@ class App extends Component {
           </div>
         </div>
           
-        <pre>{JSON.stringify(data, null, 2)}</pre>   
-        {this.state.houseForModal && 
-          <Modal open={this.state.isModalOppened} onClose={this.closeModal} center>
-            <h2>{this.state.houseForModal.name}</h2>
-            <img src={this.state.houseForModal.img} alt={this.state.houseForModal.name} />
-          </Modal>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+         
+        {houseForModal && 
+          <Modal
+            open={isModalOppened}
+            onClose={this.closeModal}
+            center
+          >
+            <ModalContent
+              houseForModal={houseForModal}
+            />
+          </Modal>  
         }  
       </div>
     );

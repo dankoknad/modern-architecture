@@ -7,7 +7,7 @@ function House({house, activeHouse, selectHouse, openModal}) {
     <div onClick={() => selectHouse(house)} className={`column is-half house ${isActive}`}>
       <div>{house.name}</div>
       <img src={house.img} alt={house.name}/>
-      <a onClick={e => openModal(e, house)} className="button">Button</a>
+      <a onClick={e => openModal(e, house)} className="button">More details</a>
     </div>
   )
 }
