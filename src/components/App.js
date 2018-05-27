@@ -6,13 +6,20 @@ import Houses from './Houses'
 class App extends Component {
   state = {
     data: data.data,
-    activeHouse: data.data[0] 
+    activeHouse: data.data[0],
+    houseForModal: null,
+    isModalOppened: false
   }
 
   selectHouse = (house) => {
     if(house.id !== this.state.activeHouse.id) {
       this.setState({activeHouse: house})
     }
+  }
+
+  openModal = (e, house) => {
+    e.stopPropagation()
+    // console.log(house)
   }
 
   render() {
@@ -26,7 +33,8 @@ class App extends Component {
             <Houses
               houses={data}
               activeHouse={activeHouse}
-              selectHouse={this.selectHouse} 
+              selectHouse={this.selectHouse}
+              openModal={this.openModal} 
             />
             <div className="text-center is-size-4">
               {activeHouse 
