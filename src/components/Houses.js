@@ -8,7 +8,7 @@ function Houses({ houses, activeHouse, selectHouse }) {
       key={house.id} 
       house={house}
       activeHouse={activeHouse}
-      selectHouse={() => selectHouse(house)}
+      selectHouse={selectHouse}
     />
   ))
   return (

@@ -10,7 +10,9 @@ class App extends Component {
   }
 
   selectHouse = (house) => {
-    this.setState({activeHouse: house})
+    if(house.id !== this.state.activeHouse.id) {
+      this.setState({activeHouse: house})
+    }
   }
 
   render() {
