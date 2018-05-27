@@ -12,7 +12,7 @@ export default class GoogleMap extends Component {
 
   state = {
     markers: [],
-    counter: 2
+    maxZIndex: 1
   }
 
   componentDidMount() {
@@ -35,11 +35,11 @@ export default class GoogleMap extends Component {
   }
   
   UNSAFE_componentWillReceiveProps() {
-    this.setState({counter: this.state.counter + 1}, () => (
+    this.setState({maxZIndex: this.state.maxZIndex + 1}, () => (
       this.markers.length && 
       this.markers[this.props.activeHouse.id]
-        .setZIndex(this.state.counter))
-    )  
+        .setZIndex(this.state.maxZIndex))
+    )
   }
 
   createMarkers = (houses) => {
@@ -66,7 +66,9 @@ export default class GoogleMap extends Component {
     })
 
     this.markers.map((marker, i) => marker.addListener('click', function(e) {
-      _self.props.selectHouse(houses[i])
+      if(_self.props.activeHouse.id !== marker.id) {
+        _self.props.selectHouse(_self.props.houses[marker.id])
+      } else return
     }))
 
     this.setState({markers: this.markers})
