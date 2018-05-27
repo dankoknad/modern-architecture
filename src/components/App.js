@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from '../data.json'
 import GoogleMap from './GoogleMap'
 import Houses from './Houses'
+import Modal from 'react-responsive-modal';
 
 class App extends Component {
   state = {
@@ -59,7 +60,12 @@ class App extends Component {
         </div>
           
         <pre>{JSON.stringify(data, null, 2)}</pre>   
-        
+        {this.state.houseForModal && 
+          <Modal open={this.state.isModalOppened} onClose={this.closeModal} center>
+            <h2>{this.state.houseForModal.name}</h2>
+            <img src={this.state.houseForModal.img} alt={this.state.houseForModal.name} />
+          </Modal>
+        }  
       </div>
     );
   }
