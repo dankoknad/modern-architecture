@@ -20,6 +20,12 @@ class App extends Component {
   openModal = (e, house) => {
     e.stopPropagation()
     // console.log(house)
+
+    this.setState({houseForModal: house, isModalOppened: true})
+  }
+
+  closeModal = () => {
+    this.setState({houseForModal: null, isModalOppened: false})
   }
 
   render() {
