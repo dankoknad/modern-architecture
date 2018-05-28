@@ -25,7 +25,7 @@ Houses.propTypes = {
   houses: PropTypes.array.isRequired,
   activeHouse: PropTypes.object.isRequired,
   selectHouse: PropTypes.func.isRequired,
-  activeCategory: PropTypes.bool.isRequired
+  activeCategory: PropTypes.string.isRequired
 }
 
 export default Houses
