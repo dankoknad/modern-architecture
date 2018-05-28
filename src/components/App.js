@@ -10,7 +10,8 @@ class App extends Component {
     data: data.data,
     activeHouse: data.data[0],
     houseForModal: null,
-    isModalOppened: false
+    isModalOppened: false,
+    activeCategory: ''
   }
 
   selectHouse = (house) => {
@@ -30,12 +31,24 @@ class App extends Component {
     this.setState({houseForModal: null, isModalOppened: false})
   }
 
+  onCategorySelect = (e) => {
+    // console.log(e.target.value)
+    this.setState({activeCategory: e.target.value})
+  }
+
   render() {
-    const { data, activeHouse, houseForModal, isModalOppened } = this.state
+    const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
 
     return (
       <div className="container">
         <h1 className="is-size-1">Modern Architecture</h1>
+        <div className="columns">
+          <select onChange={this.onCategorySelect}>
+            <option value="" selected >Choose/reset category</option>
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+          </select>
+        </div>
         <div className="columns">
           <div className="column">
             <Houses
@@ -55,7 +68,8 @@ class App extends Component {
             <GoogleMap
               houses={data}
               activeHouse={activeHouse}
-              selectHouse={this.selectHouse} 
+              selectHouse={this.selectHouse}
+              activeCategory={activeCategory}
             />
           </div>
         </div>

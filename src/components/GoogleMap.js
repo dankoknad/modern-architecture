@@ -34,12 +34,20 @@ export default class GoogleMap extends Component {
     });
   }
   
-  UNSAFE_componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps(newProps) {
     this.setState({maxZIndex: this.state.maxZIndex + 1}, () => (
       this.markers.length && 
       this.markers[this.props.activeHouse.id]
         .setZIndex(this.state.maxZIndex))
     )
+    if(this.props.activeCategory !== newProps.activeCategory) {
+      console.log('category has changed:', newProps.activeCategory)
+      this.markers.map(marker => { 
+        marker.category !== newProps.activeCategory && newProps.activeCategory
+          ? marker.setVisible(false)
+          : marker.setVisible(true);
+      })
+    }
   }
 
   createMarkers = (houses) => {
@@ -61,7 +69,8 @@ export default class GoogleMap extends Component {
         zIndex: _self.props.activeHouse.id === house.id ? 2 : 1,
         label: String(house.id + 1),
         title: house.name,
-        id: house.id
+        id: house.id,
+        category: house.category
       });
     })
 
