@@ -24,7 +24,8 @@ function Houses({ houses, activeHouse, selectHouse, openModal, activeCategory })
 Houses.propTypes = {
   houses: PropTypes.array.isRequired,
   activeHouse: PropTypes.object.isRequired,
-  selectHouse: PropTypes.func.isRequired
+  selectHouse: PropTypes.func.isRequired,
+  activeCategory: PropTypes.bool.isRequired
 }
 
 export default Houses

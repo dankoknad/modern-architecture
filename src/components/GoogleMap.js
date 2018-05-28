@@ -7,7 +7,8 @@ export default class GoogleMap extends Component {
   static propTypes = {
     houses: PropTypes.array.isRequired,
     activeHouse: PropTypes.object.isRequired,
-    selectHouse: PropTypes.func.isRequired
+    selectHouse: PropTypes.func.isRequired,
+    activeCategory: PropTypes.bool.isRequired
   } 
 
   state = {
