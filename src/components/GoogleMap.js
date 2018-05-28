@@ -12,7 +12,9 @@ export default class GoogleMap extends Component {
   } 
 
   state = {
-    maxZIndex: 1
+    maxZIndex: 1,
+    activeMarkerId: this.props.activeHouse.id,
+    activeCategory: this.props.activeCategory
   }
 
   componentDidMount() {
@@ -32,23 +34,33 @@ export default class GoogleMap extends Component {
       lat: this.props.activeHouse.lat, 
       lng: this.props.activeHouse.lng
     });
+
+    this.markers.length && 
+      this.markers[this.props.activeHouse.id]
+      .setZIndex(this.state.maxZIndex)
+    
+    this.markers.map(marker => { 
+      marker.category !== this.props.activeCategory && this.props.activeCategory
+      ? marker.setVisible(false)
+      : marker.setVisible(true);
+    })  
   }
   
-  UNSAFE_componentWillReceiveProps(newProps) {
-    if(this.props.activeCategory !== newProps.activeCategory) {
-      console.log('category has changed:', newProps.activeCategory)
-      this.markers.map(marker => { 
-        marker.category !== newProps.activeCategory && newProps.activeCategory
-        ? marker.setVisible(false)
-        : marker.setVisible(true);
-      })
-    } else {
-      this.setState({maxZIndex: this.state.maxZIndex + 1}, () => (
-        this.markers.length && 
-        this.markers[this.props.activeHouse.id]
-        .setZIndex(this.state.maxZIndex))
-      )
+  static getDerivedStateFromProps(props, state) {
+    if (props.activeHouse.id !== state.activeMarkerId) {
+      return {
+        maxZIndex: state.maxZIndex + 1,
+        activeMarkerId: props.activeHouse.id
+      };
     }
+
+    if (props.activeCategory !== state.activeCategory) {
+      return {
+        activeCategory: props.activeCategory
+      };
+    }
+
+    return null
   }
 
   createMarkers = (houses) => {
