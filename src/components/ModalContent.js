@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
@@ -7,10 +7,10 @@ const propTypes = {
 
 function ModalContent({houseForModal}) {
   return (
-    <div>
+    <Fragment>
       <h2>{houseForModal.name}</h2>
       <img src={houseForModal.img} alt={houseForModal.name} />
-    </div>
+    </Fragment>
   )
 }
 

@@ -1,5 +1,5 @@
 /*global google*/
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import markerIcon from '../img/marker.svg'
 import PropTypes from 'prop-types';
 
@@ -86,12 +86,12 @@ export default class GoogleMap extends Component {
     const { activeHouse } = this.props
 
     return (
-      <div>
+      <Fragment>
         <div className="map" ref={el => this.mapEl = el}></div>
         <div className="text-center is-size-4">
           {activeHouse && `active is ${activeHouse.name}`}
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
