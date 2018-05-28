@@ -48,6 +48,7 @@ class App extends Component {
             <option value="red">red</option>
             <option value="blue">blue</option>
           </select>
+          <br/>
         </div>
         <div className="columns">
           <div className="column">
@@ -55,7 +56,8 @@ class App extends Component {
               houses={data}
               activeHouse={activeHouse}
               selectHouse={this.selectHouse}
-              openModal={this.openModal} 
+              openModal={this.openModal}
+              activeCategory={activeCategory}
             />
             <div className="text-center is-size-4">
               {activeHouse 

@@ -2,16 +2,18 @@ import React from 'react'
 import House from './House'
 import PropTypes from 'prop-types';
 
-function Houses({ houses, activeHouse, selectHouse, openModal }) {
-  let housesEl = houses.map(house => (
-    <House 
-      key={house.id} 
-      house={house}
-      activeHouse={activeHouse}
-      selectHouse={selectHouse}
-      openModal={openModal}
-    />
-  ))
+function Houses({ houses, activeHouse, selectHouse, openModal, activeCategory }) {
+  let housesEl = houses.map(house => {
+    return activeCategory === house.category || !activeCategory
+      ? <House 
+        key={house.id} 
+        house={house}
+        activeHouse={activeHouse}
+        selectHouse={selectHouse}
+        openModal={openModal}
+      />
+      : null
+  })
   return (
     <div className="columns is-multiline">
       {housesEl}
