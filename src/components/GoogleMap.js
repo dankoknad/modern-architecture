@@ -12,7 +12,6 @@ export default class GoogleMap extends Component {
   } 
 
   state = {
-    markers: [],
     maxZIndex: 1
   }
 
@@ -81,7 +80,6 @@ export default class GoogleMap extends Component {
       } else return
     }))
 
-    this.setState({markers: this.markers})
   }
 
   render() {
