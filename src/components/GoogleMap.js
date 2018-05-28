@@ -35,18 +35,19 @@ export default class GoogleMap extends Component {
   }
   
   UNSAFE_componentWillReceiveProps(newProps) {
-    this.setState({maxZIndex: this.state.maxZIndex + 1}, () => (
-      this.markers.length && 
-      this.markers[this.props.activeHouse.id]
-        .setZIndex(this.state.maxZIndex))
-    )
     if(this.props.activeCategory !== newProps.activeCategory) {
       console.log('category has changed:', newProps.activeCategory)
       this.markers.map(marker => { 
         marker.category !== newProps.activeCategory && newProps.activeCategory
-          ? marker.setVisible(false)
-          : marker.setVisible(true);
+        ? marker.setVisible(false)
+        : marker.setVisible(true);
       })
+    } else {
+      this.setState({maxZIndex: this.state.maxZIndex + 1}, () => (
+        this.markers.length && 
+        this.markers[this.props.activeHouse.id]
+        .setZIndex(this.state.maxZIndex))
+      )
     }
   }
 
