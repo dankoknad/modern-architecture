@@ -10,9 +10,12 @@ h1 {
 
 .map {
   height: 400px;
+  width: 400px;
+  left: 66%;
 }
+
 .fixed {
-  position: fixed;
+  position: fixed !important;
 }
 
 /* .houses {

@@ -15,8 +15,8 @@ class App extends Component {
   }
 
   selectHouse = (house) => {
-    if(house.id !== this.state.activeHouse.id) {
-      this.setState({activeHouse: house})
+    if (house.id !== this.state.activeHouse.id) {
+      this.setState({ activeHouse: house })
     }
   }
 
@@ -24,35 +24,37 @@ class App extends Component {
     e.stopPropagation()
     // console.log(house)
 
-    this.setState({houseForModal: house, isModalOppened: true})
+    this.setState({ houseForModal: house, isModalOppened: true })
   }
 
   closeModal = () => {
-    this.setState({houseForModal: null, isModalOppened: false})
+    this.setState({ houseForModal: null, isModalOppened: false })
   }
 
   onCategorySelect = (e) => {
     // console.log(e.target.value)
-    this.setState({activeCategory: e.target.value})
+    this.setState({ activeCategory: e.target.value })
   }
 
   render() {
     const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
 
     return (
-      <div className="">
+      <div className="container">
         <h1 className="">Modern Architecture</h1>
-        <div className="">
-          <select onChange={this.onCategorySelect}>
-            <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category' }</option>
-            <option value="red">red</option>
-            <option value="blue">blue</option>
-            <option value="orange">orange</option>
-          </select>
-          <br/>
+        <div className="row">
+          <div className="col s12 m8 xl4">
+            <select className="browser-default" onChange={this.onCategorySelect}>
+              <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category'}</option>
+              <option value="red">red</option>
+              <option value="blue">blue</option>
+              <option value="orange">orange</option>
+            </select>
+            <br />
+          </div>
         </div>
-        <div className="">
-          <div className="">
+        <div className="row">
+          <div className="col m12 xl8">
             <Houses
               houses={data}
               activeHouse={activeHouse}
@@ -61,25 +63,23 @@ class App extends Component {
               activeCategory={activeCategory}
             />
             <div className="">
-              {activeHouse 
+              {activeHouse
                 ? `${activeHouse.name} selected with id: ${activeHouse.id}`
                 : 'pls click at some of the houses'
               }
             </div>
           </div>
-          <div className="">
-            <GoogleMap
-              houses={data}
-              activeHouse={activeHouse}
-              selectHouse={this.selectHouse}
-              activeCategory={activeCategory}
-            />
-          </div>
+          <GoogleMap
+            houses={data}
+            activeHouse={activeHouse}
+            selectHouse={this.selectHouse}
+            activeCategory={activeCategory}
+          />
         </div>
-          
+
         <pre>{JSON.stringify(data, null, 2)}</pre>
-         
-        {houseForModal && 
+
+        {houseForModal &&
           <Modal
             open={isModalOppened}
             onClose={this.closeModal}
@@ -88,8 +88,8 @@ class App extends Component {
             <ModalContent
               houseForModal={houseForModal}
             />
-          </Modal>  
-        }  
+          </Modal>
+        }
       </div>
     );
   }

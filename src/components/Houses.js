@@ -15,7 +15,7 @@ function Houses({ houses, activeHouse, selectHouse, openModal, activeCategory })
       : null
   })
   return (
-    <div className="houses">
+    <div className="row houses">
       {housesEl}
     </div>
   )

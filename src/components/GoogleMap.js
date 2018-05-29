@@ -112,10 +112,7 @@ export default class GoogleMap extends Component {
 
     return (
       <Fragment>
-        <div className="map" ref={el => this.mapEl = el}></div>
-        <div className="">
-          {activeHouse && `active is ${activeHouse.name}`}
-        </div>
+        <div className="map valign-wrapper- fixed" ref={el => this.mapEl = el}></div>
       </Fragment>
     )
   }
