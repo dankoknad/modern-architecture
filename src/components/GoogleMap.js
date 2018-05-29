@@ -13,7 +13,7 @@ export default class GoogleMap extends Component {
   } 
 
   state = {
-    maxZIndex: 1,
+    maxZIndex: this.props.houses.length,
     activeMarkerId: this.props.activeHouse.id,
     activeCategory: this.props.activeCategory
   }
@@ -23,7 +23,7 @@ export default class GoogleMap extends Component {
 
     this.map = new google.maps.Map(this.mapEl, {
       center: { lat, lng },
-      zoom: 5
+      zoom: 6
     });
 
     this.createMarkers(this.props.houses, this.props.activeHouse)
@@ -80,7 +80,7 @@ export default class GoogleMap extends Component {
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
-        zIndex: _self.props.activeHouse.id === house.id ? 2 : 1,
+        zIndex: _self.props.activeHouse.id === house.id ? _self.state.maxZIndex : house.id,
         label: String(house.id + 1),
         title: house.name,
         id: house.id,

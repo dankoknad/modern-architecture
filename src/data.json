@@ -44,7 +44,7 @@
       "name": "Sixth house",
       "img": "http://via.placeholder.com/350x150?text=06",
       "lat": -32.397,
-      "lng": 158.644,
+      "lng": 152.644,
       "category": "blue"
     },
     {
@@ -59,7 +59,7 @@
       "id": 7,
       "name": "Eight house",
       "img": "http://via.placeholder.com/350x150?text=08",
-      "lat": -38.83,
+      "lat": -34.83,
       "lng": 155,
       "category": "red"
     },
@@ -76,7 +76,7 @@
       "name": "Tenth house",
       "img": "http://via.placeholder.com/350x150?text=10",
       "lat": -37.4,
-      "lng": 155.6,
+      "lng": 152.56,
       "category": "red"
     }
   ]

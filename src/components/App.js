@@ -8,7 +8,7 @@ import ModalContent from './ModalContent'
 class App extends Component {
   state = {
     data: data.data,
-    activeHouse: data.data[0],
+    activeHouse: data.data[3],
     houseForModal: null,
     isModalOppened: false,
     activeCategory: ''
