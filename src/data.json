@@ -38,7 +38,7 @@
       "img": "http://via.placeholder.com/350x150?text=05",
       "lat": -35,
       "lng": 149.5,
-      "category": "red"
+      "category": "orange"
     },{
       "id": 5,
       "name": "Sixth house",
@@ -69,7 +69,7 @@
       "img": "http://via.placeholder.com/350x150?text=09",
       "lat": -34.6,
       "lng": 149.2,
-      "category": "blue"
+      "category": "orange"
     },
     {
       "id": 9,

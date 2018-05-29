@@ -44,9 +44,10 @@ class App extends Component {
         <h1 className="is-size-1">Modern Architecture</h1>
         <div className="columns">
           <select onChange={this.onCategorySelect}>
-            <option value="" selected >Choose/reset category</option>
+            <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category' }</option>
             <option value="red">red</option>
             <option value="blue">blue</option>
+            <option value="orange">orange</option>
           </select>
           <br/>
         </div>
