@@ -15,7 +15,7 @@ function Houses({ houses, activeHouse, selectHouse, openModal, activeCategory })
       : null
   })
   return (
-    <div className="columns is-multiline houses">
+    <div className="houses">
       {housesEl}
     </div>
   )

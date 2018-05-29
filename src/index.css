@@ -27,6 +27,7 @@ h1 {
 .house {
   cursor: pointer;
 }
+
 .active {
   color: #fff;
   background-color: #59c8fa;

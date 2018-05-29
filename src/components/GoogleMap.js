@@ -113,7 +113,7 @@ export default class GoogleMap extends Component {
     return (
       <Fragment>
         <div className="map" ref={el => this.mapEl = el}></div>
-        <div className="text-center is-size-4">
+        <div className="">
           {activeHouse && `active is ${activeHouse.name}`}
         </div>
       </Fragment>

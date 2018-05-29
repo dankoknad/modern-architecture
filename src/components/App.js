@@ -40,9 +40,9 @@ class App extends Component {
     const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
 
     return (
-      <div className="container">
-        <h1 className="is-size-1">Modern Architecture</h1>
-        <div className="columns">
+      <div className="">
+        <h1 className="">Modern Architecture</h1>
+        <div className="">
           <select onChange={this.onCategorySelect}>
             <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category' }</option>
             <option value="red">red</option>
@@ -51,8 +51,8 @@ class App extends Component {
           </select>
           <br/>
         </div>
-        <div className="columns">
-          <div className="column is-half">
+        <div className="">
+          <div className="">
             <Houses
               houses={data}
               activeHouse={activeHouse}
@@ -60,14 +60,14 @@ class App extends Component {
               openModal={this.openModal}
               activeCategory={activeCategory}
             />
-            <div className="text-center is-size-4">
+            <div className="">
               {activeHouse 
                 ? `${activeHouse.name} selected with id: ${activeHouse.id}`
                 : 'pls click at some of the houses'
               }
             </div>
           </div>
-          <div className="column is-4 is-offset-5 fixed">
+          <div className="">
             <GoogleMap
               houses={data}
               activeHouse={activeHouse}
