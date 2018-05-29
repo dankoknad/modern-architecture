@@ -39,6 +39,45 @@
       "lat": -35,
       "lng": 149.5,
       "category": "red"
+    },{
+      "id": 5,
+      "name": "Sixth house",
+      "img": "http://via.placeholder.com/350x150?text=06",
+      "lat": -32.397,
+      "lng": 158.644,
+      "category": "blue"
+    },
+    {
+      "id": 6,
+      "name": "Seventh house",
+      "img": "http://via.placeholder.com/350x150?text=07",
+      "lat": -31.77,
+      "lng": 154.2,
+      "category": "blue"
+    },
+    {
+      "id": 7,
+      "name": "Eight house",
+      "img": "http://via.placeholder.com/350x150?text=08",
+      "lat": -38.83,
+      "lng": 155,
+      "category": "red"
+    },
+    {
+      "id": 8,
+      "name": "Ninth house",
+      "img": "http://via.placeholder.com/350x150?text=09",
+      "lat": -34.6,
+      "lng": 149.2,
+      "category": "blue"
+    },
+    {
+      "id": 9,
+      "name": "Tenth house",
+      "img": "http://via.placeholder.com/350x150?text=10",
+      "lat": -37.4,
+      "lng": 155.6,
+      "category": "red"
     }
   ]
 }
