@@ -1,3 +1,11 @@
+/* 
+Screen Sizes
+Mobile Devices <= 600px	| Tablet Devices > 600px | Desktop Devices > 992px | Large Desktop Devices > 1200px
+Class Prefix = .s	        .m	                     .l	                       .xl
+Container Width	= 90%     85%	                     70%	                     70%
+Number of Columns = 12	  12	                     12	                       12
+*/
+
 body {
   margin: 0;
   padding: 0;
@@ -8,20 +16,35 @@ h1 {
   text-align: center;
 }
 
+.relative {
+  position: relative;
+}
+
+@media (max-width: 1199px) {
+  .map-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .map-container {
+    position: absolute !important;
+    left: 66.6666%  !important;
+  }
+  .map {
+    position: fixed !important;
+    max-width: 410px;
+  }
+}
+
 .map {
   height: 400px;
-  width: 400px;
-  left: 66%;
+  width: 100%;
 }
 
 .fixed {
   position: fixed !important;
 }
-
-/* .houses {
-  height: 400px;
-  overflow: scroll;
-} */
 
 .text-center {
   text-align: center;
@@ -37,7 +60,6 @@ h1 {
 }
 
 .house:hover {
-  /* background-color: #f8f8f8; */
   color: #fff;
   background-color: #59c8fa;
 }

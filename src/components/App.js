@@ -43,7 +43,7 @@ class App extends Component {
       <div className="container">
         <h1 className="">Modern Architecture</h1>
         <div className="row">
-          <div className="col s12 m8 xl4">
+          <div className="col s12 m6 xl4">
             <select className="browser-default" onChange={this.onCategorySelect}>
               <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category'}</option>
               <option value="red">red</option>
@@ -53,7 +53,8 @@ class App extends Component {
             <br />
           </div>
         </div>
-        <div className="row">
+        
+        <div className="row relative">
           <div className="col m12 xl8">
             <Houses
               houses={data}

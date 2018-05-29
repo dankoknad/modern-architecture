@@ -1,5 +1,5 @@
 /*global google*/
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import markerIcon from '../img/marker.svg'
 import PropTypes from 'prop-types';
 import scrollToElement from 'scroll-to-element'
@@ -111,9 +111,9 @@ export default class GoogleMap extends Component {
     const { activeHouse } = this.props
 
     return (
-      <Fragment>
-        <div className="map valign-wrapper- fixed" ref={el => this.mapEl = el}></div>
-      </Fragment>
+      <div className="col m12 xl4 map-container">
+        <div className="map" ref={el => this.mapEl = el}></div>
+      </div>
     )
   }
 }
