@@ -19,11 +19,11 @@ export default class GoogleMap extends Component {
   }
 
   componentDidMount() {
-    const {lat, lng} = this.props.houses[0]
+    const {lat, lng} = this.props.activeHouse
 
     this.map = new google.maps.Map(this.mapEl, {
       center: { lat, lng },
-      zoom: 6
+      zoom: 7
     });
 
     this.createMarkers(this.props.houses, this.props.activeHouse)
