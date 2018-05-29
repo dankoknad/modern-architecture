@@ -51,7 +51,7 @@ class App extends Component {
           <br/>
         </div>
         <div className="columns">
-          <div className="column">
+          <div className="column is-half">
             <Houses
               houses={data}
               activeHouse={activeHouse}
@@ -66,7 +66,7 @@ class App extends Component {
               }
             </div>
           </div>
-          <div className="column">
+          <div className="column is-4 is-offset-5 fixed">
             <GoogleMap
               houses={data}
               activeHouse={activeHouse}

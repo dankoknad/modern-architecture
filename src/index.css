@@ -11,11 +11,14 @@ h1 {
 .map {
   height: 400px;
 }
+.fixed {
+  position: fixed;
+}
 
-.houses {
+/* .houses {
   height: 400px;
   overflow: scroll;
-}
+} */
 
 .text-center {
   text-align: center;

@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import markerIcon from '../img/marker.svg'
 import PropTypes from 'prop-types';
+import scrollToElement from 'scroll-to-element'
 
 export default class GoogleMap extends Component {
   static propTypes = {
@@ -90,6 +91,17 @@ export default class GoogleMap extends Component {
     this.markers.map((marker, i) => marker.addListener('click', function(e) {
       if(_self.props.activeHouse.id !== marker.id) {
         _self.props.selectHouse(_self.props.houses[marker.id])
+        
+        const elem = document.getElementById(marker.id);
+
+        console.log(elem)
+        scrollToElement(elem, {
+            // offset: -100,
+            align: 'middle',
+            ease: 'out-back',
+            duration: 1000
+        });
+
       } else return
     }))
 
