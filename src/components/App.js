@@ -31,29 +31,39 @@ class App extends Component {
     this.setState({ houseForModal: null, isModalOppened: false })
   }
 
+  renderSelect = () => {
+    const categories = this.state.data.reduce((acc, next) => {
+      if (acc.indexOf(next.category) === -1) {
+        acc.push(next.category)
+      }
+
+      return acc
+    }, [])
+
+    return (
+      <div className="col s12 m6 xl4">
+        <select className="browser-default" onChange={this.onCategorySelect}>
+          <option key="none" value="">{this.state.activeCategory ? 'Reset category' : 'Choose category'}</option>)
+          { categories.map(category => <option key={category} value={category}>{category}</option>) }
+        </select>
+      </div>
+    )
+  }
+
   onCategorySelect = (e) => {
-    // console.log(e.target.value)
     this.setState({ activeCategory: e.target.value })
   }
 
   render() {
     const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
-
+    
     return (
       <div className="container">
         <h1 className="">Modern Architecture</h1>
         <div className="row">
-          <div className="col s12 m6 xl4">
-            <select className="browser-default" onChange={this.onCategorySelect}>
-              <option value="" selected >{activeCategory ? 'Reset category' : 'Choose category'}</option>
-              <option value="red">red</option>
-              <option value="blue">blue</option>
-              <option value="orange">orange</option>
-            </select>
-            <br />
-          </div>
+          { this.renderSelect() }
         </div>
-        
+
         <div className="row relative">
           <div className="col m12 xl8">
             <Houses

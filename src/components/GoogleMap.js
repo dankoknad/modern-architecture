@@ -41,7 +41,7 @@ export default class GoogleMap extends Component {
       .setZIndex(this.state.maxZIndex)
     
     this.markers.map(marker => { 
-      marker.category !== this.props.activeCategory && this.props.activeCategory
+      return marker.category !== this.props.activeCategory && this.props.activeCategory
       ? marker.setVisible(false)
       : marker.setVisible(true);
     })  
@@ -94,12 +94,10 @@ export default class GoogleMap extends Component {
         
         const elem = document.getElementById(marker.id);
 
-        console.log(elem)
         scrollToElement(elem, {
-            // offset: -100,
-            align: 'middle',
-            ease: 'out-back',
-            duration: 1000
+          align: 'middle',
+          ease: 'out-back',
+          duration: 1000
         });
 
       } else return
@@ -108,8 +106,6 @@ export default class GoogleMap extends Component {
   }
 
   render() {
-    const { activeHouse } = this.props
-
     return (
       <div className="col m12 xl4 map-container">
         <div className="map" ref={el => this.mapEl = el}></div>
