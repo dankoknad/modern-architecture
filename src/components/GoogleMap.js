@@ -15,11 +15,12 @@ export default class GoogleMap extends Component {
   state = {
     maxZIndex: this.props.houses.length,
     activeMarkerId: this.props.activeHouse.id,
-    activeCategory: this.props.activeCategory
+    activeCategory: this.props.activeCategory,
+    activeInfoWindowContent: this.props.activeHouse.name
   }
 
   componentDidMount() {
-    const {lat, lng} = this.props.activeHouse
+    const {lat, lng, name} = this.props.activeHouse
 
     this.map = new google.maps.Map(this.mapEl, {
       center: { lat, lng },
@@ -28,8 +29,13 @@ export default class GoogleMap extends Component {
 
     this.createMarkers(this.props.houses, this.props.activeHouse)
 
-  }
+    this.infowindow = new google.maps.InfoWindow({
+      content: name
+    })
 
+    this.infowindow.open(this.map, this.markers[this.state.activeMarkerId]);
+  }
+  
   componentDidUpdate() {
     this.props.activeHouse && this.map.panTo({
       lat: this.props.activeHouse.lat, 
@@ -40,6 +46,9 @@ export default class GoogleMap extends Component {
       this.markers[this.props.activeHouse.id]
       .setZIndex(this.state.maxZIndex)
     
+    this.infowindow.setContent(this.props.activeHouse.name)
+    this.infowindow.open(this.map, this.markers[this.state.activeMarkerId]);
+
     this.markers.map(marker => { 
       return marker.category !== this.props.activeCategory && this.props.activeCategory
       ? marker.setVisible(false)
@@ -91,7 +100,7 @@ export default class GoogleMap extends Component {
     this.markers.map((marker, i) => marker.addListener('click', function(e) {
       if(_self.props.activeHouse.id !== marker.id) {
         _self.props.selectHouse(_self.props.houses[marker.id])
-        
+        _self.infowindow.open(_self.map, marker);
         const elem = document.getElementById(marker.id);
 
         scrollToElement(elem, {
