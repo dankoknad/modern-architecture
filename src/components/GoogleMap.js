@@ -47,9 +47,18 @@ export default class GoogleMap extends Component {
       .setZIndex(this.state.maxZIndex)
     
     this.infowindow.setContent(this.props.activeHouse.name)
-    this.infowindow.open(this.map, this.markers[this.state.activeMarkerId]);
 
-    this.markers.map(marker => { 
+    //hidding info window if selected marker isn't visible
+    const filtered = this.props.houses.filter(item => item.category === this.props.activeCategory)
+    const isActiveMarkerVisible = filtered.some(item => item.category === this.markers[this.state.activeMarkerId].category)
+
+    if(isActiveMarkerVisible || !this.props.activeCategory) {
+      this.infowindow.open(this.map, this.markers[this.state.activeMarkerId]);
+    } else {
+      this.infowindow.close()
+    }  
+
+    this.markers.map(marker => {
       return marker.category !== this.props.activeCategory && this.props.activeCategory
       ? marker.setVisible(false)
       : marker.setVisible(true);
