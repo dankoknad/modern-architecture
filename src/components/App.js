@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="col s12 m6 xl4">
         <select className="browser-default" onChange={this.onCategorySelect}>
-          <option key="none" value="">{this.state.activeCategory ? 'Reset category' : 'Choose category'}</option>)
+          <option key="none" value="">{this.state.activeCategory ? 'Show all' : 'Choose category'}</option>)
           { categories.map(category => <option key={category} value={category}>{category}</option>) }
         </select>
       </div>
