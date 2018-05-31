@@ -22,7 +22,6 @@ class App extends Component {
 
   openModal = (e, house) => {
     e.stopPropagation()
-    // console.log(house)
 
     this.setState({ houseForModal: house, isModalOppened: true })
   }
@@ -62,6 +61,16 @@ class App extends Component {
         <h1 className="">Modern Architecture</h1>
         <div className="row">
           { this.renderSelect() }
+          <div className="col s12 m6 xl4">
+            <br/>
+            {activeHouse
+              ? <div>
+                  {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
+                  <span style={{ color: activeHouse.category}}>{activeHouse.category}</span>
+                </div>  
+              : 'pls click at some of the houses'
+            }
+          </div>
         </div>
 
         <div className="row relative">
@@ -73,12 +82,6 @@ class App extends Component {
               openModal={this.openModal}
               activeCategory={activeCategory}
             />
-            <div className="">
-              {activeHouse
-                ? `${activeHouse.name} selected with id: ${activeHouse.id}`
-                : 'pls click at some of the houses'
-              }
-            </div>
           </div>
           <GoogleMap
             houses={data}
