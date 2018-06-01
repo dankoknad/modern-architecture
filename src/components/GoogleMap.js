@@ -115,7 +115,7 @@ export default class GoogleMap extends Component {
 
   render() {
     return (
-      <div className="col m12 xl4 map-container">
+      <div className="col-md-12 col-lg-4 map-container">
         <div className="map" ref={el => this.mapEl = el}></div>
       </div>
     )
