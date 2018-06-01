@@ -14,7 +14,7 @@ function House({house, activeHouse, selectHouse, openModal}) {
 
 House.propTypes = {
   house: PropTypes.object.isRequired,
-  activeHouse: PropTypes.object.isRequired,
+  activeHouse: PropTypes.object,
   selectHouse: PropTypes.func.isRequired
 }
 

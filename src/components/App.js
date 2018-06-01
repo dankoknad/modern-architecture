@@ -8,16 +8,14 @@ import ModalContent from './ModalContent'
 class App extends Component {
   state = {
     data: data.data,
-    activeHouse: data.data[3],
+    activeHouse: null,
     houseForModal: null,
     isModalOppened: false,
     activeCategory: ''
   }
 
   selectHouse = (house) => {
-    if (house.id !== this.state.activeHouse.id) {
-      this.setState({ activeHouse: house })
-    }
+    this.setState({ activeHouse: house })
   }
 
   openModal = (e, house) => {
@@ -43,7 +41,7 @@ class App extends Component {
       <div className="col s12 m6 xl4">
         <select className="browser-default" onChange={this.onCategorySelect}>
           <option key="none" value="">{this.state.activeCategory ? 'Show all' : 'Choose category'}</option>)
-          { categories.map(category => <option key={category} value={category}>{category}</option>) }
+          {categories.map(category => <option key={category} value={category}>{category}</option>)}
         </select>
       </div>
     )
@@ -55,20 +53,20 @@ class App extends Component {
 
   render() {
     const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
-    
+
     return (
       <div className="container">
         <h1 className="">Modern Architecture</h1>
         <div className="row">
-          { this.renderSelect() }
+          {this.renderSelect()}
           <div className="col s12 m6 xl4">
-            <br/>
+            <br />
             {activeHouse
               ? <div>
-                  {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
-                  <span style={{ color: activeHouse.category}}>{activeHouse.category}</span>
-                </div>  
-              : 'pls click at some of the houses'
+                {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
+                <span style={{ color: activeHouse.category }}>{activeHouse.category}</span>
+              </div>
+              : 'Pls click at some house or marker'
             }
           </div>
         </div>

@@ -23,7 +23,7 @@ function Houses({ houses, activeHouse, selectHouse, openModal, activeCategory })
 
 Houses.propTypes = {
   houses: PropTypes.array.isRequired,
-  activeHouse: PropTypes.object.isRequired,
+  activeHouse: PropTypes.object,
   selectHouse: PropTypes.func.isRequired,
   activeCategory: PropTypes.string.isRequired
 }
