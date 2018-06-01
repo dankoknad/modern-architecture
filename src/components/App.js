@@ -38,8 +38,8 @@ class App extends Component {
     }, [])
 
     return (
-      <div className="col s12 m6 xl4">
-        <select className="browser-default" onChange={this.onCategorySelect}>
+      <div className="col-sm-6 col-lg-4">
+        <select className="select" onChange={this.onCategorySelect}>
           <option key="none" value="">{this.state.activeCategory ? 'Show all' : 'Choose category'}</option>)
           {categories.map(category => <option key={category} value={category}>{category}</option>)}
         </select>
@@ -59,8 +59,7 @@ class App extends Component {
         <h1 className="">Modern Architecture</h1>
         <div className="row">
           {this.renderSelect()}
-          <div className="col s12 m6 xl4">
-            <br />
+          <div className="col-sm-6 col-lg-4">
             {activeHouse
               ? <div>
                 {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
@@ -72,7 +71,7 @@ class App extends Component {
         </div>
 
         <div className="row relative">
-          <div className="col m12 xl8">
+          <div className="col-lg-8">
             <Houses
               houses={data}
               activeHouse={activeHouse}

@@ -34,35 +34,34 @@ export default class GoogleMap extends Component {
   }
 
   componentDidUpdate() {
-    this.props.activeHouse && this.map.panTo({
-      lat: this.props.activeHouse.lat,
-      lng: this.props.activeHouse.lng
+    const { activeHouse, activeCategory } = this.props
+    const { maxZIndex, activeMarkerId } = this.state
+
+    activeHouse && this.map.panTo({
+      lat: activeHouse.lat,
+      lng: activeHouse.lng
     });
 
-    this.markers.length &&
-      this.markers[this.props.activeHouse.id]
-        .setZIndex(this.state.maxZIndex)
+    this.markers.length && activeHouse &&
+      this.markers[activeHouse.id]
+        .setZIndex(maxZIndex)
 
-    //hidding info window if selected marker isn't visible
-    const filtered = this.props.houses.filter(item => item.category === this.props.activeCategory)
-    const isActiveMarkerVisible = filtered.some(item => item.category === this.markers[this.props.activeHouse.id].category)
-
-    if (isActiveMarkerVisible || !this.props.activeCategory) {
-      this.infowindow.setContent(this.props.activeHouse.name)
-      this.infowindow.open(this.map, this.markers[this.state.activeMarkerId]);
+    if (activeMarkerId > -1 && activeHouse && (activeCategory === this.markers[activeHouse.id].category || !activeCategory )) {
+      this.infowindow.setContent(activeHouse.name)
+      this.infowindow.open(this.map, this.markers[activeHouse.id]);
     } else {
       this.infowindow.close()
     }
 
     this.markers.map(marker => {
-      return marker.category !== this.props.activeCategory && this.props.activeCategory
+      return marker.category !== activeCategory && activeCategory
         ? marker.setVisible(false)
         : marker.setVisible(true);
     })
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.activeHouse && props.activeHouse.id !== state.activeMarkerId) {
+    if (props.activeHouse) {
       return {
         maxZIndex: state.maxZIndex + 1,
         activeMarkerId: props.activeHouse.id
