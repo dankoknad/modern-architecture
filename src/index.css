@@ -5,6 +5,9 @@ Class Prefix = .s	        .m	                     .l	                       .xl
 Container Width	= 90%     85%	                     70%	                     70%
 Number of Columns = 12	  12	                     12	                       12
 */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -14,6 +17,11 @@ body {
 
 h1 {
   text-align: center;
+}
+
+.h1 {
+  font-size: 44px;
+  margin-bottom: 70px;
 }
 
 .relative {
@@ -30,6 +38,7 @@ h1 {
   .map-container {
     position: absolute !important;
     left: 66.6666%  !important;
+    padding-left: 10px;
   }
   .map {
     position: fixed !important;
@@ -52,16 +61,43 @@ h1 {
 
 .house {
   cursor: pointer;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .house {
+    padding: 10px;
+    border: 1px solid #fff;
+  }
 }
 
 .active {
   color: #fff;
-  background-color: #59c8fa;
+  background-color: #393939;
+  /* border-color: #a7d8fd; */
 }
 
 .house:hover {
   color: #fff;
-  background-color: #59c8fa;
+  background-color: #393939;
+}
+
+.house__img {
+  border-radius: 2px;  
+}
+
+.house__category {
+  font-weight: 400;
+  padding: 2px 6px 2px 4px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.temp__category {
+  font-weight: 400;
+  padding: 2px 6px 2px 4px;
+  border-radius: 3px;
+  border: 1px solid #393939;
 }
 .select {
   display: block;

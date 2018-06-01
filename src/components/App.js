@@ -56,14 +56,14 @@ class App extends Component {
 
     return (
       <div className="container">
-        <h1 className="">Modern Architecture</h1>
+        <h1 className="h1">Modern Architecture</h1>
         <div className="row">
           {this.renderSelect()}
           <div className="col-sm-6 col-lg-4">
             {activeHouse
               ? <div>
                 {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
-                <span style={{ color: activeHouse.category }}>{activeHouse.category}</span>
+                <em className="temp__category" style={{ color: activeHouse.category }}>{activeHouse.category}</em>
               </div>
               : 'Pls click at some house or marker'
             }
