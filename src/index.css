@@ -73,13 +73,12 @@ h1 {
 
 .active {
   color: #fff;
-  background-color: #393939;
-  /* border-color: #a7d8fd; */
+  background-color: #9b9b9b;
 }
 
 .house:hover {
   color: #fff;
-  background-color: #393939;
+  background-color: #9b9b9b;
 }
 
 .house__img {
@@ -90,7 +89,7 @@ h1 {
   font-weight: 400;
   padding: 2px 6px 2px 4px;
   border-radius: 3px;
-  border: 1px solid #393939;
+  border: 1px solid #9b9b9b;
   background-color: #fff;
 }
 

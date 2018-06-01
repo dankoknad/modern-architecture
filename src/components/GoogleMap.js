@@ -1,6 +1,6 @@
 /*global google*/
 import React, { Component } from 'react'
-import markerIcon from '../img/marker.svg'
+import markerIcon from '../img/marker-gray.svg'
 import mapStyles from '../mapStyles.json'
 import PropTypes from 'prop-types';
 import scrollToElement from 'scroll-to-element'
