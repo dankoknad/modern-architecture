@@ -1,6 +1,7 @@
 /*global google*/
 import React, { Component } from 'react'
 import markerIcon from '../img/marker.svg'
+import mapStyles from '../mapStyles.json'
 import PropTypes from 'prop-types';
 import scrollToElement from 'scroll-to-element'
 
@@ -26,6 +27,7 @@ export default class GoogleMap extends Component {
 
     this.map = new google.maps.Map(this.mapEl, {
       center: defaultCenter,
+      styles: mapStyles,
       zoom: 7
     });
 
