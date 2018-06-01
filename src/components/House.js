@@ -20,7 +20,7 @@ House.propTypes = {
   house: PropTypes.object.isRequired,
   activeHouse: PropTypes.object,
   selectHouse: PropTypes.func.isRequired,
-  openModal: PropTypes.func.isRequiredgit
+  openModal: PropTypes.func.isRequired
 }
 
 export default House
