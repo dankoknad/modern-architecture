@@ -62,13 +62,8 @@ h1 {
 .house {
   cursor: pointer;
   border-radius: 4px;
-}
-
-@media (min-width: 768px) {
-  .house {
-    padding: 10px;
-    border: 1px solid #fff;
-  }
+  padding: 10px;
+  border: 1px solid #fff;
 }
 
 .active {
