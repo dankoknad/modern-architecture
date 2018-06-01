@@ -63,7 +63,7 @@ class App extends Component {
             {activeHouse
               ? <div>
                 {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
-                <em className="temp__category" style={{ color: activeHouse.category }}>{activeHouse.category}</em>
+                <em className="house__category" style={{ color: activeHouse.category }}>{activeHouse.category}</em>
               </div>
               : 'Pls click at some house or marker'
             }
