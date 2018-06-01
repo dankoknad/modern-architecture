@@ -61,7 +61,7 @@ export default class GoogleMap extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.activeHouse) {
+    if (props.activeHouse && props.activeHouse.id !== state.activeMarkerId) {
       return {
         maxZIndex: state.maxZIndex + 1,
         activeMarkerId: props.activeHouse.id
