@@ -8,8 +8,8 @@
     "gh-pages": "^1.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.3.2",
+    "react-motion": "^0.5.2",
     "react-responsive-modal": "^3.0.2",
     "react-scripts": "1.1.4",
     "scroll-to-element": "^2.0.0"

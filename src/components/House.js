@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-function House({ house, activeHouse, selectHouse, openModal }) {
+function House({ house, activeHouse, selectHouse, openModal, style }) {
   const isActive = activeHouse && activeHouse.id === house.id ? "active" : ""
   return (
-    <div id={house.id} onClick={() => selectHouse(house)} className={`house col-sm-6 ${isActive}`}>
+    <div id={house.id} onClick={() => selectHouse(house)} className={`house col-sm-6 ${isActive}`} style={style}>
       <p>
         <strong>{house.name}</strong> | category: <em className="house__category" style={{ color: house.category }}>{house.category}</em>
       </p>
