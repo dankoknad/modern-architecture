@@ -59,6 +59,10 @@ h1 {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .houses {
   /* position: relative; */
 }

@@ -9,6 +9,7 @@ function ModalContent({ houseForModal }) {
   if (houseForModal.architect) {
     return (
       <Fragment>
+        <h1>{houseForModal.buildingName}</h1>
         <h2>{houseForModal.architect}</h2>
         <div dangerouslySetInnerHTML={{ __html: houseForModal.markup }} />
       </Fragment>
