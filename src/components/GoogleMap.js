@@ -37,29 +37,28 @@ export default class GoogleMap extends Component {
     const { activeHouse, activeCategory } = this.props
     const { maxZIndex } = this.state
 
-    this.markers.length && activeHouse &&
-      this.markers[activeHouse.id]
-        .setZIndex(maxZIndex)
-
     if (activeHouse && activeHouse.id > -1 && (activeCategory === this.markers[activeHouse.id].category || !activeCategory )) {
       this.infowindow.setContent(activeHouse.name)
       this.infowindow.open(this.map, this.markers[activeHouse.id]);
     } else {
       this.infowindow.close()
     }
-
-    this.markers.map(marker => {
-      return marker.category !== activeCategory && activeCategory
-        ? marker.setVisible(false)
-        : marker.setVisible(true);
-    })
-
+    
     if(prevProps.activeHouse !== this.props.activeHouse) {
       this.map.panTo({
         lat: activeHouse.lat,
         lng: activeHouse.lng
       })
+      
+      this.markers.map(marker => {
+        return marker.category !== activeCategory && activeCategory
+        ? marker.setVisible(false)
+        : marker.setVisible(true);
+      })
 
+      this.markers[activeHouse.id]
+        .setZIndex(maxZIndex)
+      
       this.setState({
         maxZIndex: this.state.maxZIndex + 1
       })
