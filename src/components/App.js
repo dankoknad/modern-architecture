@@ -7,10 +7,12 @@ import ModalContent from './ModalContent'
 
 class App extends Component {
   state = {
-    data: data.data,
+    data: data.houses,
+    details: data.housesDetails,
     activeHouse: null,
     houseForModal: null,
     isModalOppened: false,
+    shouldModalBeCenterd: true,
     activeCategory: ''
   }
 
@@ -21,7 +23,12 @@ class App extends Component {
   openModal = (e, house) => {
     e.stopPropagation()
 
-    this.setState({ houseForModal: house, isModalOppened: true })
+    const houseDetails = this.state.details.find(houseDetail => houseDetail.id === house.id)
+    if(houseDetails) {
+      this.setState({ houseForModal: houseDetails, isModalOppened: true, shouldModalBeCenterd: false })
+    } else {
+      this.setState({ houseForModal: house, isModalOppened: true, shouldModalBeCenterd: true })
+    }
   }
 
   closeModal = () => {
@@ -52,7 +59,7 @@ class App extends Component {
   }
 
   render() {
-    const { data, activeHouse, houseForModal, isModalOppened, activeCategory } = this.state
+    const { data, activeHouse, houseForModal, details, isModalOppened, activeCategory, shouldModalBeCenterd } = this.state
 
     return (
       <div className="container">
@@ -94,7 +101,7 @@ class App extends Component {
           <Modal
             open={isModalOppened}
             onClose={this.closeModal}
-            center
+            center={shouldModalBeCenterd}
           >
             <ModalContent
               houseForModal={houseForModal}
