@@ -14,15 +14,13 @@ export default class GoogleMap extends Component {
   }
 
   state = {
-    maxZIndex: this.props.houses.length,
-    activeMarkerId: null,
-    activeCategory: this.props.activeCategory
+    maxZIndex: this.props.houses.length
   }
 
   componentDidMount() {
     const defaultCenter = {
-      lat: -35,
-      lng: 149.5
+      lat: this.props.houses[2].lat,
+      lng: this.props.houses[2].lng
     }
 
     this.map = new google.maps.Map(this.mapEl, {
@@ -35,20 +33,15 @@ export default class GoogleMap extends Component {
     this.infowindow = new google.maps.InfoWindow()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { activeHouse, activeCategory } = this.props
-    const { maxZIndex, activeMarkerId } = this.state
-
-    activeHouse && this.map.panTo({
-      lat: activeHouse.lat,
-      lng: activeHouse.lng
-    });
+    const { maxZIndex } = this.state
 
     this.markers.length && activeHouse &&
       this.markers[activeHouse.id]
         .setZIndex(maxZIndex)
 
-    if (activeMarkerId > -1 && activeHouse && (activeCategory === this.markers[activeHouse.id].category || !activeCategory )) {
+    if (activeHouse && activeHouse.id > -1 && (activeCategory === this.markers[activeHouse.id].category || !activeCategory )) {
       this.infowindow.setContent(activeHouse.name)
       this.infowindow.open(this.map, this.markers[activeHouse.id]);
     } else {
@@ -60,23 +53,17 @@ export default class GoogleMap extends Component {
         ? marker.setVisible(false)
         : marker.setVisible(true);
     })
-  }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.activeHouse && props.activeHouse.id !== state.activeMarkerId) {
-      return {
-        maxZIndex: state.maxZIndex + 1,
-        activeMarkerId: props.activeHouse.id
-      };
+    if(prevProps.activeHouse !== this.props.activeHouse) {
+      this.map.panTo({
+        lat: activeHouse.lat,
+        lng: activeHouse.lng
+      })
+
+      this.setState({
+        maxZIndex: this.state.maxZIndex + 1
+      })
     }
-
-    if (props.activeCategory !== state.activeCategory) {
-      return {
-        activeCategory: props.activeCategory
-      };
-    }
-
-    return null
   }
 
   createMarkers = (houses) => {
