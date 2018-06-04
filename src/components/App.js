@@ -59,7 +59,7 @@ class App extends Component {
   }
 
   render() {
-    const { data, activeHouse, houseForModal, details, isModalOppened, activeCategory, shouldModalBeCenterd } = this.state
+    const { data, activeHouse, houseForModal, isModalOppened, activeCategory, shouldModalBeCenterd } = this.state
 
     return (
       <div className="container">

@@ -37,6 +37,13 @@ export default class GoogleMap extends Component {
     const { activeHouse, activeCategory } = this.props
     const { maxZIndex } = this.state
 
+    if(this.props.activeHouse && this.props.activeHouse.category === this.props.activeCategory || (this.props.activeHouse && !this.props.activeCategory)) {
+      this.map.panTo({
+        lat: activeHouse.lat,
+        lng: activeHouse.lng
+      })
+    }
+
     if (prevProps.activeCategory !== this.props.activeCategory) {
       this.markers.map(marker => {
         return marker.category !== activeCategory && activeCategory
@@ -53,11 +60,6 @@ export default class GoogleMap extends Component {
     }
 
     if (prevProps.activeHouse !== this.props.activeHouse) {
-      this.map.panTo({
-        lat: activeHouse.lat,
-        lng: activeHouse.lng
-      })
-
       this.markers[activeHouse.id]
         .setZIndex(maxZIndex)
 
