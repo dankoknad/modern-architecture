@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import markerIcon from '../img/marker-gray.svg'
 import mapStyles from '../mapStyles.json'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import scrollToElement from 'scroll-to-element'
 
 export default class GoogleMap extends Component {
@@ -27,7 +27,7 @@ export default class GoogleMap extends Component {
       center: defaultCenter,
       styles: mapStyles,
       zoom: 7
-    });
+    })
 
     this.createMarkers(this.props.houses, this.props.activeHouse)
     this.infowindow = new google.maps.InfoWindow()
@@ -37,7 +37,11 @@ export default class GoogleMap extends Component {
     const { activeHouse, activeCategory } = this.props
     const { maxZIndex } = this.state
 
-    if(this.props.activeHouse && this.props.activeHouse.category === this.props.activeCategory || (this.props.activeHouse && !this.props.activeCategory)) {
+    if (
+      (this.props.activeHouse &&
+        this.props.activeHouse.category === this.props.activeCategory) ||
+      (this.props.activeHouse && !this.props.activeCategory)
+    ) {
       this.map.panTo({
         lat: activeHouse.lat,
         lng: activeHouse.lng
@@ -48,20 +52,24 @@ export default class GoogleMap extends Component {
       this.markers.map(marker => {
         return marker.category !== activeCategory && activeCategory
           ? marker.setVisible(false)
-          : marker.setVisible(true);
+          : marker.setVisible(true)
       })
     }
 
-    if (activeHouse && activeHouse.id > -1 && (activeCategory === this.markers[activeHouse.id].category || !activeCategory)) {
+    if (
+      activeHouse &&
+      activeHouse.id > -1 &&
+      (activeCategory === this.markers[activeHouse.id].category ||
+        !activeCategory)
+    ) {
       this.infowindow.setContent(activeHouse.name)
-      this.infowindow.open(this.map, this.markers[activeHouse.id]);
+      this.infowindow.open(this.map, this.markers[activeHouse.id])
     } else {
       this.infowindow.close()
     }
 
     if (prevProps.activeHouse !== this.props.activeHouse) {
-      this.markers[activeHouse.id]
-        .setZIndex(maxZIndex)
+      this.markers[activeHouse.id].setZIndex(maxZIndex)
 
       this.setState({
         maxZIndex: this.state.maxZIndex + 1
@@ -69,8 +77,8 @@ export default class GoogleMap extends Component {
     }
   }
 
-  createMarkers = (houses) => {
-    const _self = this;
+  createMarkers = houses => {
+    const _self = this
 
     const icon = {
       url: markerIcon, // url
@@ -78,37 +86,42 @@ export default class GoogleMap extends Component {
       origin: new google.maps.Point(0, 0), // origin
       anchor: new google.maps.Point(19, 50), // anchor
       labelOrigin: new google.maps.Point(19, 19) // label position
-    };
+    }
 
     this.markers = houses.map(house => {
       return new google.maps.Marker({
         position: { lat: house.lat, lng: house.lng },
         map: this.map,
         icon: icon,
-        zIndex: _self.props.activeHouse && _self.props.activeHouse.id === house.id ? _self.state.maxZIndex : house.id,
+        zIndex:
+          _self.props.activeHouse && _self.props.activeHouse.id === house.id
+            ? _self.state.maxZIndex
+            : house.id,
         label: String(house.id + 1),
         title: house.name,
         id: house.id,
         category: house.category
-      });
+      })
     })
 
-    this.markers.map((marker, i) => marker.addListener('click', function (e) {
-      _self.props.selectHouse(_self.props.houses[marker.id])
-      const elem = document.getElementById(marker.id);
+    this.markers.map((marker, i) =>
+      marker.addListener('click', function(e) {
+        _self.props.selectHouse(_self.props.houses[marker.id])
+        const elem = document.getElementById(marker.id)
 
-      scrollToElement(elem, {
-        align: 'middle',
-        ease: 'out-back',
-        duration: 1000
-      });
-    }))
+        scrollToElement(elem, {
+          align: 'middle',
+          ease: 'out-back',
+          duration: 1000
+        })
+      })
+    )
   }
 
   render() {
     return (
       <div className="col-md-12 col-lg-4 map-container">
-        <div className="map" ref={el => this.mapEl = el}></div>
+        <div className="map" ref={el => (this.mapEl = el)} />
       </div>
     )
   }

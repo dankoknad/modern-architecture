@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import data from '../data.json'
 import GoogleMap from './GoogleMap'
 import Houses from './Houses'
-import Modal from 'react-responsive-modal';
+import Modal from 'react-responsive-modal'
 import ModalContent from './ModalContent'
 
 class App extends Component {
@@ -16,18 +16,28 @@ class App extends Component {
     activeCategory: ''
   }
 
-  selectHouse = (house) => {
+  selectHouse = house => {
     this.setState({ activeHouse: house })
   }
 
   openModal = (e, house) => {
     e.stopPropagation()
 
-    const houseDetails = this.state.details.find(houseDetail => houseDetail.id === house.id)
-    if(houseDetails) {
-      this.setState({ houseForModal: houseDetails, isModalOppened: true, shouldModalBeCenterd: false })
+    const houseDetails = this.state.details.find(
+      houseDetail => houseDetail.id === house.id
+    )
+    if (houseDetails) {
+      this.setState({
+        houseForModal: houseDetails,
+        isModalOppened: true,
+        shouldModalBeCenterd: false
+      })
     } else {
-      this.setState({ houseForModal: house, isModalOppened: true, shouldModalBeCenterd: true })
+      this.setState({
+        houseForModal: house,
+        isModalOppened: true,
+        shouldModalBeCenterd: true
+      })
     }
   }
 
@@ -47,19 +57,32 @@ class App extends Component {
     return (
       <div className="col-sm-6 col-lg-4">
         <select className="select" onChange={this.onCategorySelect}>
-          <option key="none" value="">{this.state.activeCategory ? 'Show all' : 'Choose category'}</option>)
-          {categories.map(category => <option key={category} value={category}>{category}</option>)}
+          <option key="none" value="">
+            {this.state.activeCategory ? 'Show all' : 'Choose category'}
+          </option>)
+          {categories.map(category => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </div>
     )
   }
 
-  onCategorySelect = (e) => {
+  onCategorySelect = e => {
     this.setState({ activeCategory: e.target.value })
   }
 
   render() {
-    const { data, activeHouse, houseForModal, isModalOppened, activeCategory, shouldModalBeCenterd } = this.state
+    const {
+      data,
+      activeHouse,
+      houseForModal,
+      isModalOppened,
+      activeCategory,
+      shouldModalBeCenterd
+    } = this.state
 
     return (
       <div className="container">
@@ -67,13 +90,21 @@ class App extends Component {
         <div className="row">
           {this.renderSelect()}
           <div className="col-sm-6 col-lg-4">
-            {activeHouse
-              ? <div>
-                {`${activeHouse.name} selected with id: ${activeHouse.id} and category `}
-                <em className="house__category" style={{ color: activeHouse.category }}>{activeHouse.category}</em>
+            {activeHouse ? (
+              <div>
+                {`${activeHouse.name} selected with id: ${
+                  activeHouse.id
+                } and category `}
+                <em
+                  className="house__category"
+                  style={{ color: activeHouse.category }}
+                >
+                  {activeHouse.category}
+                </em>
               </div>
-              : 'Pls click at some house or marker'
-            }
+            ) : (
+              'Pls click at some house or marker'
+            )}
           </div>
         </div>
 
@@ -97,20 +128,18 @@ class App extends Component {
 
         <pre>{JSON.stringify(data, null, 2)}</pre>
 
-        {houseForModal &&
+        {houseForModal && (
           <Modal
             open={isModalOppened}
             onClose={this.closeModal}
             center={shouldModalBeCenterd}
           >
-            <ModalContent
-              houseForModal={houseForModal}
-            />
+            <ModalContent houseForModal={houseForModal} />
           </Modal>
-        }
+        )}
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

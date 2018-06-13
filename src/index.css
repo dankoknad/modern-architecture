@@ -5,6 +5,7 @@ Class Prefix = .s	        .m	                     .l	                       .xl
 Container Width	= 90%     85%	                     70%	                     70%
 Number of Columns = 12	  12	                     12	                       12
 */
+
 * {
   box-sizing: border-box;
 }
@@ -21,6 +22,7 @@ h1 {
 
 .h1 {
   font-size: 44px;
+  margin-top: 70px;
   margin-bottom: 70px;
 }
 
@@ -63,13 +65,7 @@ h1 {
   text-align: right;
 }
 
-.houses {
-  /* position: relative; */
-}
-
 .house {
-  /* position: relative; */
-  /* position: absolute; */
   cursor: pointer;
   border-radius: 4px;
   padding: 10px;
