@@ -10,26 +10,35 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
       className={`house col-sm-6 ${isActive}`}
       style={style}
     >
-      <p>
-        <strong>{house.name}</strong> | category:{' '}
-        <em className="house__category" style={{ color: house.category }}>
-          {house.category}
-        </em>
-      </p>
-      <img
-        height="100"
-        className="responsive-img house__img"
-        src={house.img}
-        alt={house.name}
-      />
-      <p>
-        <a
-          onClick={e => openModal(e, house)}
-          className="btn btn-default btn-xs"
-        >
-          Learn more
-        </a>
-      </p>
+      <div className="row">
+        <h3>
+          {house.name} |{' '}
+          <em className="house__category" style={{ color: house.category }}>
+            {house.category}
+          </em>
+        </h3>
+        <div className="col-sm-6">
+          <img
+            height="100"
+            className="responsive-img house__img"
+            src={house.img}
+            alt={house.name}
+          />
+        </div>
+
+        <div className="col-sm-6">
+          <p>
+            <a
+              onClick={e => openModal(e, house)}
+              className="btn btn-default btn-xs"
+            >
+              Learn more
+            </a>
+          </p>
+        </div>
+        {/* .col-sm-6 */}
+      </div>
+      {/* .row */}
     </div>
   )
 }
