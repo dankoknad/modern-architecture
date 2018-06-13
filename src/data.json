@@ -3,7 +3,7 @@
     {
       "id": 0,
       "name": "Villa Savoye",
-      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/tree/master/public/img/villa-savoye_thumb.jpg",
+      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/master/public/img/villa-savoye_thumb.jpg",
       "lat": -34.397,
       "lng": 150.644,
       "category": "blue"
@@ -11,7 +11,7 @@
     {
       "id": 1,
       "name": "Fallingwater",
-      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/tree/master/public/img/fallingwater_thumb.jpg",
+      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/master/public/img/fallingwater_thumb.jpg",
       "lat": -35.397,
       "lng": 151.644,
       "category": "blue"
