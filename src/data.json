@@ -2,7 +2,7 @@
   "houses": [
     {
       "id": 0,
-      "name": "First house",
+      "name": "Villa Savoye",
       "img": "/img/villa-savoye_thumb.jpg",
       "lat": -34.397,
       "lng": 150.644,
@@ -10,8 +10,8 @@
     },
     {
       "id": 1,
-      "name": "Second house",
-      "img": "http://via.placeholder.com/150x100?text=02",
+      "name": "Fallingwater",
+      "img": "/img/fallingwater_thumb.jpg",
       "lat": -35.397,
       "lng": 151.644,
       "category": "blue"
