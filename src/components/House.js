@@ -28,15 +28,14 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
           />
         </div>
 
-        <div className="col-sm-6">
-          <p>
-            <a
-              onClick={e => openModal(e, house)}
-              className="btn btn-default btn-xs"
-            >
-              Learn more
-            </a>
-          </p>
+        <div className="col-sm-6 text-center">
+          <p>{house.architect}</p>
+          <a
+            onClick={e => openModal(e, house)}
+            className="btn btn-default btn-xs"
+          >
+            Learn more
+          </a>
         </div>
         {/* .col-sm-6 */}
       </div>
