@@ -74,6 +74,7 @@ body {
 }
 
 .house {
+  min-height: 240px;
   cursor: pointer;
   border-radius: 4px;
   padding: 10px;
