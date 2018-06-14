@@ -29,11 +29,12 @@
     },
     {
       "id": 3,
-      "name": "Fourth house",
-      "img": "http://via.placeholder.com/150x100?text=04",
-      "lat": -34,
-      "lng": 151.7,
-      "category": "blue"
+      "name": "4×4 House",
+      "architect": "Tadao Ando",
+      "img": "img/4x4/4x4_thumb.jpg",
+      "lat": 34.64033126831055,
+      "lng": 135.02439880371094,
+      "category": "asia"
     },
     {
       "id": 4,
