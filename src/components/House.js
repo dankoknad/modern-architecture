@@ -13,7 +13,10 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
       <div className="row">
         <h3>
           {house.name}{' '}
-          <em className="house__category" style={{ color: house.category }}>
+          <em
+            className="house__category"
+            style={{ color: house.category || 'black' }}
+          >
             {house.category}
           </em>
         </h3>

@@ -26,7 +26,7 @@ export default class GoogleMap extends Component {
     this.map = new google.maps.Map(this.mapEl, {
       center: defaultCenter,
       styles: mapStyles,
-      zoom: 7
+      zoom: 4
     })
 
     this.createMarkers(this.props.houses, this.props.activeHouse)
