@@ -23,6 +23,11 @@ body {
   margin-bottom: 70px;
 }
 
+p {
+  line-height: 1.5em;
+  margin: 2em 0;
+}
+
 .relative {
   position: relative;
 }
@@ -56,6 +61,15 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  .col-sm-6 {
+    padding: 0 15px;
+  }
+
+  .col-sm-6 .col-sm-6:nth-child(even) {
+    padding: 0;
+  }
+}
 .map {
   height: 400px;
   width: 100%;

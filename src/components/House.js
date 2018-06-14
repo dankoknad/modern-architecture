@@ -22,7 +22,6 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
         </h3>
         <div className="col-sm-6">
           <img
-            height="150"
             className="img-responsive house__img"
             src={house.img}
             alt={house.name}
