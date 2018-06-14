@@ -4,7 +4,7 @@
       "id": 0,
       "name": "Villa Savoye",
       "architect":	"Le Corbusier, Pierre Jeanneret",
-      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/master/public/img/villa-savoye/villa-savoye_thumb.jpg",
+      "img": "img/villa-savoye/villa-savoye_thumb.jpg",
       "lat": 48.9244,
       "lng": 2.0283,
       "category": "europe"
@@ -13,7 +13,7 @@
       "id": 1,
       "name": "Fallingwater",
       "architect": "Frank Lloyd Wright",
-      "img": "https://raw.githubusercontent.com/dankoknad/modern-architecture/master/public/img/fallingwater/fallingwater_thumb.jpg",
+      "img": "img/fallingwater/fallingwater_thumb.jpg",
       "lat": 39.906111,
       "lng": -79.468056,
       "category": "us"
@@ -103,7 +103,7 @@
       "id": 2,
       "architect": "Ludwig Mies van der Rohe",
       "buildingName": "Farnsworth House",
-      "markup": "<p>The Farnsworth House was designed and constructed by Ludwig Mies van der Rohe between 1945 and 1951. It is a one-room weekend retreat in a once-rural setting, located 55 miles (89 km) southwest of Chicago's downtown on a 60-acre (24 ha) estate site, adjoining the Fox River, south of the city of Plano, Illinois. The steel and glass house was commissioned by Dr. Edith Farnsworth, a prominent Chicago nephrologist, as a place where she could engage in her hobbies — playing the violin, translating poetry, and enjoying nature.</p><img class=\"img-responsive center-block modal-img\" src=\"img/farnsworth-house/farnsworth-house_01.jpg\" alt=\"Farnsworth House\">" 
+      "markup": "<p>The Farnsworth House was designed and constructed by Ludwig Mies van der Rohe between 1945 and 1951. It is a one-room weekend retreat in a once-rural setting, located 55 miles (89 km) southwest of Chicago's downtown on a 60-acre (24 ha) estate site, adjoining the Fox River, south of the city of Plano, Illinois. The steel and glass house was commissioned by Dr. Edith Farnsworth, a prominent Chicago nephrologist, as a place where she could engage in her hobbies — playing the violin, translating poetry, and enjoying nature.</p><img class=\"img-responsive center-block modal-img\" src=\"img/farnsworth-house/farnsworth-house_01.jpg\" alt=\"Farnsworth House\"><p>The essential characteristics of the house are immediately apparent. The extensive use of clear floor-to-ceiling glass opens the interior to its natural surroundings to an extreme degree. Two distinctly expressed horizontal slabs, which form the roof and the floor, sandwich an open space for living. The slab edges are defined by exposed steel structural members painted pure white.</p><img class=\"img-responsive center-block modal-img\" src=\"img/farnsworth-house/farnsworth-house_02.jpg\" alt=\"Farnsworth House\"><p>The house is elevated 5 feet 3 inches (1.60 m) above a flood plain by eight wide flange steel columns which are attached to the sides of the floor and ceiling slabs. The slabs' ends extend beyond the column supports, creating cantilevers. A third floating slab, an attached terrace, acts as a transition between the living area and the ground. The house is accessed by two sets of wide steps connecting ground to terrace and then to porch.</p><img class=\"img-responsive center-block modal-img\" src=\"img/farnsworth-house/farnsworth-house_03.jpg\" alt=\"Farnsworth House\"><p>The Farnsworth House sits on a floodplain that faces the Fox River, differentiating the vast meadow and a variety of trees from its white exterior. The isolated, private residence establishes the architects concept of simple living.</p><img class=\"img-responsive center-block modal-img\" src=\"img/farnsworth-house/farnsworth-house_04.jpg\" alt=\"Farnsworth House\"><p class=\"text-right\">Source: <a href=\"https://en.wikipedia.org/wiki/Farnsworth_House\" target=\"_blank\">wikipedia</a></p>" 
     }
   ]
 }
