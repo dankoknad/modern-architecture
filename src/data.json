@@ -47,7 +47,7 @@
     {
       "id": 5,
       "name": "Stahl House",
-      "img": "https://via.placeholder.com/150x100?text=06",
+      "img": "img/stahl-house/stahl-house_thumb.jpg",
       "lat": 34.100437,
       "lng": -118.370152,
       "category": "us"
@@ -117,6 +117,12 @@
       "architect": "Richard Neutra",
       "buildingName": "Kaufmann Desert House",
       "markup": "<p>This vacation home was designed to emphasize the desert landscape and its harsh climate.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_02.jpg\" alt=\"Kaufmann Desert House\"><p>The Kaufmann House distills space in the silver-plated horizontal planes that rest atop transparent glass panes. The unique sharp vertical feature is the chimney located next to the “public square”, as Neutra called it.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_01.jpg\" alt=\"Kaufmann Desert House\"><p>The rear facade of the house opens to the landscape and garden, while the facade overlooking the street appears closed, with its facade of ashlar stone.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_03.jpg\" alt=\"Kaufmann Desert House\"><p>The lounge area, shared with the dining room and more or less square, is at the center of the house. The plan in the form of cross guarantees that the four wings get both daylight and good ventilation.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_04.jpg\" alt=\"Kaufmann Desert House\"><p class=\"text-right\">Source: <a href=\"https://en.wikiarquitectura.com/building/kaufmann-house/\" target=\"_blank\">wikiarquitectura</a></p>" 
+    },
+    {
+      "id": 5,
+      "architect": "Pierre Francis Koenig",
+      "buildingName": "Stahl House",
+      "markup": "<p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_01.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_02.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_03.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_04.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_05.jpg\" alt=\"Stahl House\">" 
     }
   ]
 }
