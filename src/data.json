@@ -46,11 +46,11 @@
     },
     {
       "id": 5,
-      "name": "Sixth house",
+      "name": "Stahl House",
       "img": "https://via.placeholder.com/150x100?text=06",
-      "lat": -32.397,
-      "lng": 152.644,
-      "category": "blue"
+      "lat": 34.100437,
+      "lng": -118.370152,
+      "category": "us"
     },
     {
       "id": 6,

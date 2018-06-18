@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import House from './House'
 import PropTypes from 'prop-types'
-import { StaggeredMotion, spring } from 'react-motion'
+import { StaggeredMotion, spring, presets } from 'react-motion'
 
 function Houses({
   houses,
@@ -22,8 +22,12 @@ function Houses({
       styles={prevInterpolatedStyles =>
         prevInterpolatedStyles.map((_, i) => {
           return i === 0
-            ? { h: spring(1) }
-            : { h: spring(prevInterpolatedStyles[i - 1].h) }
+            ? { h: spring(1, { stiffness: 60, damping: 17 }) }
+            : {
+                h: spring(prevInterpolatedStyles[i - 1].h),
+                stiffness: 60,
+                damping: 17
+              }
         })
       }
     >
@@ -36,7 +40,7 @@ function Houses({
               activeHouse={activeHouse}
               selectHouse={selectHouse}
               openModal={openModal}
-              style={{ transform: `scale(${style.h})` }}
+              style={{ opacity: style.h }}
             />
           ))}
         </Fragment>

@@ -92,9 +92,7 @@ class App extends Component {
           <div className="col-sm-6 col-lg-4">
             {activeHouse ? (
               <div>
-                {`${activeHouse.name} selected with id: ${
-                  activeHouse.id
-                } and category `}
+                {`id: ${activeHouse.id}, category `}
                 <em
                   className="house__category"
                   style={{ color: activeHouse.category }}
