@@ -47,7 +47,7 @@
     {
       "id": 5,
       "name": "Sixth house",
-      "img": "http://via.placeholder.com/150x100?text=06",
+      "img": "https://via.placeholder.com/150x100?text=06",
       "lat": -32.397,
       "lng": 152.644,
       "category": "blue"
@@ -55,7 +55,7 @@
     {
       "id": 6,
       "name": "Seventh house",
-      "img": "http://via.placeholder.com/150x100?text=07",
+      "img": "https://via.placeholder.com/150x100?text=07",
       "lat": -31.77,
       "lng": 154.2,
       "category": "blue"
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "name": "Eight house",
-      "img": "http://via.placeholder.com/150x100?text=08",
+      "img": "https://via.placeholder.com/150x100?text=08",
       "lat": -34.83,
       "lng": 155,
       "category": "red"
@@ -71,7 +71,7 @@
     {
       "id": 8,
       "name": "Ninth house",
-      "img": "http://via.placeholder.com/150x100?text=09",
+      "img": "https://via.placeholder.com/150x100?text=09",
       "lat": -34.6,
       "lng": 149.2,
       "category": "orange"
@@ -79,7 +79,7 @@
     {
       "id": 9,
       "name": "Tenth house",
-      "img": "http://via.placeholder.com/150x100?text=10",
+      "img": "https://via.placeholder.com/150x100?text=10",
       "lat": -37.4,
       "lng": 152.56,
       "category": "red"
@@ -116,7 +116,7 @@
       "id": 4,
       "architect": "Richard Neutra",
       "buildingName": "Kaufmann Desert House",
-      "markup": "<p>Kaufmann Desert House</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_01.jpg\" alt=\"Kaufmann Desert House\">" 
+      "markup": "<p>This vacation home was designed to emphasize the desert landscape and its harsh climate.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_02.jpg\" alt=\"Kaufmann Desert House\"><p>The Kaufmann House distills space in the silver-plated horizontal planes that rest atop transparent glass panes. The unique sharp vertical feature is the chimney located next to the “public square”, as Neutra called it.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_01.jpg\" alt=\"Kaufmann Desert House\"><p>The rear facade of the house opens to the landscape and garden, while the facade overlooking the street appears closed, with its facade of ashlar stone.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_03.jpg\" alt=\"Kaufmann Desert House\"><p>The lounge area, shared with the dining room and more or less square, is at the center of the house. The plan in the form of cross guarantees that the four wings get both daylight and good ventilation.</p><img class=\"img-responsive center-block modal-img\" src=\"img/kaufmann-desert-house/kaufmann-desert-house_04.jpg\" alt=\"Kaufmann Desert House\"><p class=\"text-right\">Source: <a href=\"https://en.wikiarquitectura.com/building/kaufmann-house/\" target=\"_blank\">wikiarquitectura</a></p>" 
     }
   ]
 }
