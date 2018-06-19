@@ -123,6 +123,12 @@
       "architect": "Pierre Francis Koenig",
       "buildingName": "Stahl House",
       "markup": "<p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_01.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_03.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_02.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_04.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/stahl-house/stahl-house_05.jpg\" alt=\"Stahl House\">" 
+    },
+    {
+      "id": 6,
+      "architect": "Richard Neutra",
+      "buildingName": "Constance Perkins House",
+      "markup": "<p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/constance-perkins-house/constance-perkins-house_01.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/constance-perkins-house/constance-perkins-house_02.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/constance-perkins-house/constance-perkins-house_03.jpg\" alt=\"Stahl House\"><p>will be added ...</p><img class=\"img-responsive center-block modal-img\" src=\"img/constance-perkins-house/constance-perkins-house_04.jpg\" alt=\"Stahl House\"><p>will be added ...</p>" 
     }
   ]
 }

@@ -155,6 +155,10 @@ p {
   border-color: #ccc;
 }
 
+.btn-default:hover {
+  border-color: #4e4e4e;
+}
+
 .btn-xs {
   padding: 1px 5px;
   font-size: 12px;

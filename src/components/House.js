@@ -9,6 +9,7 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
       onClick={() => selectHouse(house)}
       className={`house col-sm-6 ${isActive}`}
       style={style}
+      title="click to show on map"
     >
       <div className="row">
         <h3>
@@ -33,6 +34,7 @@ function House({ house, activeHouse, selectHouse, openModal, style }) {
           <a
             onClick={e => openModal(e, house)}
             className="btn btn-default btn-xs"
+            title="click to show in modal"
           >
             Learn more
           </a>

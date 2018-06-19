@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import House from './House'
 import PropTypes from 'prop-types'
-import { StaggeredMotion, spring, presets } from 'react-motion'
+import { StaggeredMotion, spring } from 'react-motion'
 
 function Houses({
   houses,
